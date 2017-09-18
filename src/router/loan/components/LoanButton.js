@@ -16,12 +16,13 @@ class LoanButton extends Component {
     const { loanSummaryContainerStyle } = styles;
     return (
       <View style={loanSummaryContainerStyle}>
-        <View style={{ flexDirection: 'row', paddingLeft: 10, paddingRight: 10 }}>
+        <View style={{ flexDirection: 'row' }}>
           <Button
             icon={{ name: 'library-books' }}
             title={STATEMENT}
             fontFamily='Cloud-Light'
             backgroundColor='#153d8a'
+            buttonStyle={{ borderRadius: 25 }}
           />    
           <Button 
             onPress={this.showModal}
@@ -29,6 +30,7 @@ class LoanButton extends Component {
             title={CAL_CLOSE_CONTRACT}  
             fontFamily='Cloud-Light'   
             backgroundColor='#153d8a'
+            buttonStyle={{ borderRadius: 25 }}            
           />
         </View>
         <Modal isVisible={this.state.isModalVisible} >

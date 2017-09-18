@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, ScrollView, Image } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper';
 import BarcodeSummary from './BarcodeSummary';
+import BarcodeImage from './BarcodeImage';
+import BarcodeList from './BarcodeList';
 import { Spinner } from '../../../components/common';
 
 class Barcode extends Component {
   renderDetail() {
     const { containerStyle } = styles;   
     return this.props.loans.loanDb.map((loan) => 
-      <View>
+      <View style={containerStyle} key={loan.loan_id}>
         <BarcodeSummary loan={loan} /> 
-        <ScrollView key={loan.loan_id}>
-          <View style={containerStyle}>
-            <View style={{ alignItems: 'center', padding: 10 }}>
-              <Image
-                style={{ width: '100%', height: 100, }}
-                source={require('../../../../store/image/barcode-test.png')}      
-              />
-            </View>
-          </View>
+        <ScrollView>
+          <BarcodeImage loan={loan} transactions={this.props.transactions} />  
+          <BarcodeList transactions={this.props.transactions} loan={loan} />  
         </ScrollView>
       </View>
     );
@@ -41,9 +37,7 @@ class Barcode extends Component {
 
 const styles = StyleSheet.create({
   containerStyle: {         
-    flex: 1,
-    flexDirection: 'column',   
-    justifyContent: 'space-between',   
+    flex: 1, 
   },
   text: {
     color: '#fff',

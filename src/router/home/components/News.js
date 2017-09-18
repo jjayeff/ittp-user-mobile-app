@@ -5,8 +5,7 @@ import ImageSlider from 'react-native-image-slider';
 const imagesNews = [
     require('../../../../store/image/new1.jpeg'),
     require('../../../../store/image/new2.jpeg'),
-    require('../../../../store/image/new1.jpeg'), 
-    require('../../../../store/image/new2.jpeg'),                       
+    require('../../../../store/image/new3.jpeg'),                      
 ];
 
 class News extends Component {
@@ -34,7 +33,7 @@ class News extends Component {
     
   render() {
     return (
-      <View style={{ height: 170 }}>
+      <View style={{ height: 145 }}>
         <ImageSlider
           images={imagesNews}
           position={this.state.position}

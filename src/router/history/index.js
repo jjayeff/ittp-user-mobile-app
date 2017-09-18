@@ -17,7 +17,7 @@ const History = () => {
 
 const styles = StyleSheet.create({
   historyStyle: {
-    backgroundColor: '#e6eaed',          
+    backgroundColor: '#fff',          
     flex: 1,
     flexDirection: 'column',
   },

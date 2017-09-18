@@ -4,6 +4,7 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 class ModalComponent extends Component {
   render() {
@@ -15,10 +16,7 @@ class ModalComponent extends Component {
         <Modal />
       </View>
       <TouchableOpacity onPress={onPress}>
-        <Image
-          style={closeStyle}
-          source={require('../../../store/image/icons/close-icon.png')}        
-        />
+        <Icon name='cancel' color='#366dc0' size={72} />
       </TouchableOpacity>
     </View>
     );

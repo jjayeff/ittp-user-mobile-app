@@ -18,7 +18,7 @@ const BarcodeSummary = (props) => {
         <View style={rowStyle}>
           <Text style={textStyle}>{loan_id}</Text>      
           <View style={flexEndStyle}>
-            <Text style={textColorStyle} >615.80 บาท</Text>        
+            <Text style={textColorStyle} >1500.00 บาท</Text>        
           </View>
         </View>
         <View style={rowStyle}>

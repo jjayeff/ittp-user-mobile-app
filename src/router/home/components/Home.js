@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, ScrollView, Image, Text } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { CID } from '../../../../config';
+import News from './News';
 import HeaderHome from './HeaderHome';
 import LoanHome from './LoanHome';
-import EtcHome from './EtcHome';
+import CardHome from './CardHome';
 import { Spinner } from '../../../components/common';
 
 class Home extends Component {
@@ -26,7 +27,7 @@ class Home extends Component {
   renderComponents() {
     const { containerStyle } = styles;   
     let total = 0; 
-    const { firstname } = this.props.loans.loanDb[0];
+    const { firstname, lastname } = this.props.loans.loanDb[0];
     this.props.loans.loanDb.map(loan => total += loan.cf_principal);
     const onPress = {
       history: this.onPressHistory,
@@ -35,9 +36,10 @@ class Home extends Component {
     };    
     return (
       <View style={containerStyle}>
-        <HeaderHome firstname={firstname} />
+        <News />
+        <HeaderHome firstname={firstname} lastname={lastname} />
         <LoanHome onPress={this.onPressLoan} num={this.props.loans.loanDb.length} total={total} />
-        <EtcHome onPress={onPress} />
+        <CardHome onPress={onPress} />
       </View>
     );
   }

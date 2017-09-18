@@ -25,7 +25,7 @@ class MeList extends Component {
         icon: 'payment'
       },
       {
-        title: 'สถาที่ติดต่อเรา',
+        title: 'สถานที่ติดต่อเรา',
         icon: 'account-balance'
       },
     ];
