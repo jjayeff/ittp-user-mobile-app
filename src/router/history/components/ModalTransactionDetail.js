@@ -72,7 +72,7 @@ class ModalTransactionDetail extends Component {
           <View style={rowStyle}>
             <Image
               style={{ width: 45, height: 45 }}
-              source={require('../../../../store/image/banks/ittp-icon.png')}
+              source={require('../../../../store/image/banks/ittp.png')}
             />
             <Text style={headerCentertextStyle}>{ITTP_NAME}</Text>
           </View>
@@ -83,7 +83,7 @@ class ModalTransactionDetail extends Component {
           <View style={rowStyle}>
             <Image
               style={{ width: 45, height: 45 }}
-              source={require('../../../../store/image/banks/ittp-icon.png')}
+              source={require('../../../../store/image/banks/ittp.png')}
             />
             <Text style={headerCentertextStyle}>{ITTP_NAME}</Text>
           </View>
