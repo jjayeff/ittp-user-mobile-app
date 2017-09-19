@@ -10,6 +10,9 @@ class MeList extends Component {
   onPressContact() {
     Actions.contact();
   }
+  onPressPlace() {
+    Actions.place();
+  }
   render() {
     const list1 = [
       {
@@ -26,6 +29,7 @@ class MeList extends Component {
       {
         title: 'สถานที่ติดต่อ',
         icon: 'account-balance',
+        onPress: this.onPressPlace        
       },
       {
         title: 'ช่องทางติดต่อ',
