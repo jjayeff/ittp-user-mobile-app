@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { Header, Bottom } from '../../components/common';
-import { PRODUCT } from '../../texts';
-import ProductComponent from './components/Product';
+import { CONTACT } from '../../texts';
+import ContactComponent from './components/Contact';
 
-class Product extends Component {
+class Contact extends Component {
   onPressBack() {
-    Actions.home();    
+    Actions.me();    
   }
   render() {
     const { containerStyle } = styles;
     return (
       <View style={containerStyle}>
-        <Header headerText={PRODUCT} onPress={this.onPressBack} />
-        <ProductComponent />
-        <Bottom selectedTab={PRODUCT} />
+        <Header headerText={CONTACT} onPress={this.onPressBack} />
+        <ContactComponent />
+        <Bottom selectedTab={CONTACT} />
       </View>
     );
   }
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Product;
+export default Contact;

@@ -33,6 +33,7 @@ export const HISTORY = 'รายการ';
 export const BARCODE = 'บาร์โค้ด';
 export const ME = 'ฉัน';
 export const PRODUCT = 'ประเภทสัญญา';
+export const CONTACT = 'ช่องทางติดต่อ';
 
 //etc
 export const BATH = 'บาท';

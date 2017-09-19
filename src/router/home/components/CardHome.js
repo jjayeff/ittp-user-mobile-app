@@ -4,7 +4,7 @@ import { CardIcon, CardIcons } from '../../../components/common';
 
 const CardHome = (props) => {
   const { containerStyle, rowStyle } = styles;
-  const { me, history, barcode, product } = props.onPress;
+  const { me, history, barcode, product, contact } = props.onPress;
   return (
     <View style={containerStyle}>
       <View style={rowStyle}>
@@ -13,7 +13,7 @@ const CardHome = (props) => {
       </View>
       <View style={rowStyle}>
         <CardIcon title='ข้อมูลส่วนตัว' icon='person' iconColor='#03A9F4' />
-        <CardIcon title='ช่องทางติดต่อ' icon='home' iconColor='#366dc0' /> 
+        <CardIcon title='ช่องทางติดต่อ' icon='home' iconColor='#366dc0' onPress={contact} /> 
       </View>
       <View style={rowStyle}>
         <CardIcons title='ช่องทางจ่ายเงิน' icon='get-app' iconColor='#366dc0' />

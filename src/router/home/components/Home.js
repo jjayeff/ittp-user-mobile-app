@@ -27,6 +27,9 @@ class Home extends Component {
   onPressProduct() {
     Actions.product();
   }
+  onPressContact() {
+    Actions.contact();
+  }
   renderComponents() {
     const { containerStyle } = styles;   
     let total = 0; 
@@ -36,7 +39,8 @@ class Home extends Component {
       history: this.onPressHistory,
       barcode: this.onPressBarcode,
       me: this.onPressMe,
-      product: this.onPressProduct      
+      product: this.onPressProduct,
+      contact: this.onPressContact,          
     };    
     return (
       <View style={containerStyle}>

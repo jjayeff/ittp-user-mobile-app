@@ -13,9 +13,9 @@ class LoanButton extends Component {
   showModal = () => this.setState({ isModalVisible: true });
   hideModal = () => this.setState({ isModalVisible: false });
   render() {
-    const { loanSummaryContainerStyle } = styles;
+    const { containerStyle } = styles;
     return (
-      <View style={loanSummaryContainerStyle}>
+      <View style={containerStyle}>
         <View style={{ flexDirection: 'row' }}>
           <Button
             icon={{ name: 'library-books' }}
@@ -44,7 +44,7 @@ class LoanButton extends Component {
 }
 
 const styles = StyleSheet.create({
-  loanSummaryContainerStyle: {       
+  containerStyle: {       
     flex: 1,
     alignItems: 'center',    
     justifyContent: 'space-between',       
