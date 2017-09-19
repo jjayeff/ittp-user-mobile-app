@@ -26,6 +26,7 @@ import {
   HOW_MUCH_CLOSE_CONTRACT,
   DATE_OPEN_CONTRACT
 } from '../../../texts';
+import { normalize } from '../../../utils/fontResponsive';
 
 class ModalCalCloseContract extends Component {
   state = { date: moment() };  
@@ -145,12 +146,12 @@ const styles = {
   HeadertextStyle: {              
     color: '#153d8a',
     fontFamily: 'Cloud-Light',
-    fontSize: 15,
+    fontSize: normalize(15),
     paddingLeft: 10,
   },
   textStyle: {             
     color: 'steelblue',
-    fontSize: 12,
+    fontSize: normalize(12),
     fontFamily: 'Cloud-Light',
     paddingLeft: 10,
   },

@@ -25,6 +25,7 @@ import {
   FINE_LAST,
   TOTAL,
 } from '../../../texts';
+import { normalize } from '../../../utils/fontResponsive';
 
 class ModalLoanDetail extends Component {
   render() {
@@ -135,13 +136,13 @@ const styles = {
   HeadertextStyle: {              
     color: '#153d8a',
     fontFamily: 'Cloud-Light',
-    fontSize: 15,
+    fontSize: normalize(15),
     paddingLeft: 10,
   },
   textStyle: {             
     color: 'steelblue',
     fontFamily: 'Cloud-Light',
-    fontSize: 12,
+    fontSize: normalize(12),
     paddingLeft: 10,
   },
 };

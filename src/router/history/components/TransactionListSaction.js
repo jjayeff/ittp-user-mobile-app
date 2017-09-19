@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text
 } from 'react-native';
-import { ListItem, Icon } from 'react-native-elements';
+import { ListItem } from 'react-native-elements';
 import Modal from 'react-native-modal';
 import { ModalComponent } from '../../../components/common';
 import { DateFormat } from '../../../utils/base';

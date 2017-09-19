@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import moment from 'moment';
 import { TimeFormat } from '../../../utils/base';
+import { normalize } from '../../../utils/fontResponsive';
 
 class LoanRefresh extends Component {
   state = { date: moment() }
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     color: '#153d8a'
   },
   textColorStyle: {
-    fontSize: 12,
+    fontSize: normalize(12),
     backgroundColor: '#153d8a',    
     color: '#ffffff'          
   }

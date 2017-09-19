@@ -3,6 +3,7 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
+import { normalize } from '../../utils/fontResponsive';
 
 const Button = ({ onPress, children }) => {
   const { buttonStyle, textStyle } = styles;
@@ -20,7 +21,7 @@ const styles = {
   textStyle: {
     alignSelf: 'center',
     color: 'steelblue',
-    fontSize: 16,
+    fontSize: normalize(16),
     fontFamily: 'Cloud-Light',
     fontWeight: '600',
     paddingTop: 10,

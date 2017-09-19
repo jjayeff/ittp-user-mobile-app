@@ -8,6 +8,7 @@ import {
 import { Actions } from 'react-native-router-flux';
 import { Icon } from 'react-native-elements';
 import { HOME, ME, LOAN, HISTORY, BARCODE } from '../../texts';
+import { normalize } from '../../utils/fontResponsive';
 
 class Bottom extends Component {
   constructor() {
@@ -113,13 +114,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   textStyle: {        
-    fontSize: 14,    
+    fontSize: normalize(14),    
     fontFamily: 'Cloud-Light',   
     alignItems: 'center',   
     color: '#366dc0',
   },
   textSelectedStyle: {        
-    fontSize: 14,    
+    fontSize: normalize(14),    
     fontFamily: 'Cloud-Light',   
     alignItems: 'center',   
     color: '#989898',

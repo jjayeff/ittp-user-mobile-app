@@ -23,11 +23,6 @@ const styles = StyleSheet.create({
   meStyle: {         
     flex: 1,
     justifyContent: 'space-between',     
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
   }
 });
 

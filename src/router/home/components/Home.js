@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   containerStyle: {         
     flex: 1,
     flexDirection: 'column', 
-    paddingBottom: 40,    
+    paddingBottom: 30,    
   },
   circleStyle: {
     borderRadius: 15,

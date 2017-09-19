@@ -44,11 +44,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',   
     width: '100%',
     paddingBottom: 40,    
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
   }
 });
 

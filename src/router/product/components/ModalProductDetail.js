@@ -6,18 +6,7 @@ import {
   ScrollView
 } from 'react-native';
 import { TextModal } from '../../../components/common';
-import { DateFormat, Money } from '../../../utils/base';
-import {
-  CTBBL,
-  CTGSB,
-  BCBBL,
-  BCGSB,
-  CD,
-  FIRST_TRANSACTION,
-  BBL_NAME,
-  GSB_NAME,
-  ITTP_NAME,
-} from '../../../texts';
+import { normalize } from '../../../utils/fontResponsive';
 
 class ModalProductDetail extends Component {
   renderComponents() {
@@ -87,20 +76,20 @@ const styles = {
   HeadertextStyle: {
     color: '#153d8a',
     fontFamily: 'Cloud-Light',
-    fontSize: 17,
+    fontSize: normalize(17),
     paddingLeft: 10,
   },
   headerCentertextStyle: {
     color: '#153d8a',
     fontFamily: 'Cloud-Light',
-    fontSize: 18,
+    fontSize: normalize(18),
     paddingLeft: 10,
     alignSelf: 'center'
   },
   textStyle: {
     color: 'steelblue',
     fontFamily: 'Cloud-Light',
-    fontSize: 14,
+    fontSize: normalize(14),
     paddingLeft: 10,
   },
 };

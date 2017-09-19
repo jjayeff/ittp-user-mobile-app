@@ -12,9 +12,11 @@ class Barcode extends Component {
     return this.props.loans.loanDb.map((loan) => 
       <View style={containerStyle} key={loan.loan_id}>
         <ScrollView>
-          <BarcodeSummary loan={loan} /> 
-          <BarcodeImage loan={loan} transactions={this.props.transactions} />           
-          <BarcodeList transactions={this.props.transactions} loan={loan} />  
+          <View style={{ paddingBottom: 40 }}>
+            <BarcodeSummary loan={loan} /> 
+            <BarcodeImage loan={loan} transactions={this.props.transactions} />           
+            <BarcodeList transactions={this.props.transactions} loan={loan} /> 
+          </View> 
         </ScrollView>
       </View>
     );
@@ -38,12 +40,7 @@ class Barcode extends Component {
 const styles = StyleSheet.create({
   containerStyle: {         
     flex: 1, 
-    paddingBottom: 40,
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
+    paddingBottom: 40,         
   }
 });
 

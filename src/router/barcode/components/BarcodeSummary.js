@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Hr from 'react-native-hr';
+import { normalize } from '../../../utils/fontResponsive';
 
 const BarcodeSummary = (props) => {
   const { 
@@ -55,17 +56,17 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',           
   },
   textStyle: {
-    fontSize: 17,
+    fontSize: normalize(17),
     fontFamily: 'Cloud-Light',
     color: '#153d8a'
   },
   textsmallStyle: {
-    fontSize: 13,
+    fontSize: normalize(13),
     fontFamily: 'Cloud-Light',
     color: '#153d8a'
   },
   textColorStyle: {
-    fontSize: 32,
+    fontSize: normalize(32),
     fontFamily: 'Cloud-Light',
     color: 'red'          
   }

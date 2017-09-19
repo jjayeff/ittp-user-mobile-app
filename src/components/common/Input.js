@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TextInput
 } from 'react-native';
+import { normalize } from '../../utils/fontResponsive';
 
 const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
   const { labelStyle, inputStyle, containerStyle } = styles;
@@ -28,12 +29,12 @@ const styles = StyleSheet.create({
     color: '#000',
     paddingRight: 5,
     paddingLeft: 5,
-    fontSize: 18,
+    fontSize: normalize(18),
     lineHeight: 23,
     flex: 2,
   },
   labelStyle: {
-    fontSize: 18,
+    fontSize: normalize(18),
     paddingLeft: 20,
     flex: 1,
   },

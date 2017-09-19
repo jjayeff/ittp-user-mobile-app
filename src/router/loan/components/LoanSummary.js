@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
+import { normalize } from '../../../utils/fontResponsive';
 
 const LoanSummary = (props) => {
   const { loanSummaryContainerStyle, detailTypeLoanStyle, textStyle, textColorStyle } = styles;
@@ -31,12 +32,12 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',           
   },
   textStyle: {
-    fontSize: 17,
+    fontSize: normalize(17),
     fontFamily: 'Cloud-Light',
     color: '#153d8a'
   },
   textColorStyle: {
-    fontSize: 12,
+    fontSize: normalize(12),
     backgroundColor: '#153d8a',    
     color: '#ffffff'          
   }

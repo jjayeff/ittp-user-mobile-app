@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import { Money } from '../../../utils/base';
 import { BATH } from '../../../texts';
+import { normalize } from '../../../utils/fontResponsive';
 
 class LoanHome extends Component {
   render() {
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between' 
   },
   bigTextStyle: {
-    fontSize: 30,
+    fontSize: normalize(30),
     fontFamily: 'Cloud-Light',
     backgroundColor: 'rgba(0,0,0,0.4)',
     color: '#fff',
@@ -56,14 +57,14 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
   },
   textStyle: {
-    fontSize: 22,
+    fontSize: normalize(22),
     fontFamily: 'Cloud-Light',
     backgroundColor: 'rgba(0,0,0,0)',
     color: '#000',
     paddingLeft: 2,
   },
   smallTextStyle: {
-    fontSize: 16,
+    fontSize: normalize(16),
     fontFamily: 'Cloud-Light',
     backgroundColor: 'rgba(0,0,0,0)',
     color: '#000',

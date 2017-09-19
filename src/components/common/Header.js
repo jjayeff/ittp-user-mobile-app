@@ -5,6 +5,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { normalize } from '../../utils/fontResponsive';
 
 class Header extends Component {
   onPressLogOut() {
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: normalize(24),
     fontFamily: 'Cloud-Light', 
   }
 });

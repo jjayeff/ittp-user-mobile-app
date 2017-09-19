@@ -31,9 +31,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',   
     paddingBottom: 40,     
   },
-  text: {
-    fontSize: 30,
-  }
 });
 
 export default Transaction;

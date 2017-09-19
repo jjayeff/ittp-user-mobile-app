@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Money } from '../../../utils/base';
+import { normalize } from '../../../utils/fontResponsive';
 
 const TransactionSummary = (props) => {
   const { 
@@ -48,17 +49,17 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',           
   },
   textStyle: {
-    fontSize: 17,
+    fontSize: normalize(17),
     fontFamily: 'Cloud-Light',
     color: '#153d8a'
   },
   textsmallStyle: {
-    fontSize: 12,
+    fontSize: normalize(12),
     fontFamily: 'Cloud-Light',
     color: '#153d8a'
   },
   textColorStyle: {
-    fontSize: 12,
+    fontSize: normalize(12),
     backgroundColor: '#153d8a',    
     color: '#ffffff'          
   }

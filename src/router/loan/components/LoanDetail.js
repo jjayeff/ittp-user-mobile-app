@@ -5,6 +5,7 @@ import { ModalComponent } from '../../../components/common';
 import { MIN_DUE, DUE_DATE, BATH } from '../../../texts';
 import { DateFormat, Money } from '../../../utils/base';
 import ModalLoanDetail from './ModalLoanDetail';
+import { normalize } from '../../../utils/fontResponsive';
 
 class LoanDetail extends Component {
   state = {
@@ -88,27 +89,27 @@ const styles = StyleSheet.create({
     flexDirection: 'column',    
   },
   textStyle: {
-    fontSize: 17,
+    fontSize: normalize(17),
     fontFamily: 'Cloud-Light',
     alignItems: 'center',
     paddingTop: 10,     
     color: 'steelblue',            
   },
   pageStyle: {
-    fontSize: 18,
+    fontSize: normalize(18),
     fontFamily: 'Cloud-Light',    
     alignItems: 'center',
     paddingBottom: 5,     
     color: 'steelblue',            
   },
   textHeadStyle: {
-    fontSize: 19,       
+    fontSize: normalize(19),       
     fontFamily: 'Cloud-Light',    
     alignItems: 'center',    
     color: '#153d8a',        
   },
   textDetail: {
-    fontSize: 16,       
+    fontSize: normalize(16),       
     fontFamily: 'Cloud-Light',    
     alignItems: 'center',    
     color: 'red',        

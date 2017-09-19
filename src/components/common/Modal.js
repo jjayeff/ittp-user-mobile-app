@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {
-  Image,
   View,
   TouchableOpacity
 } from 'react-native';
 import { Icon } from 'react-native-elements';
+import { normalize } from '../../utils/fontResponsive';
 
 class ModalComponent extends Component {
   render() {
@@ -54,7 +54,7 @@ const styles = {
     alignSelf: 'center',
     color: 'steelblue',
     fontFamily: 'Cloud-Light',
-    fontSize: 12,
+    fontSize: normalize(12),
     paddingTop: 10,
     paddingBottom: 10,
   },

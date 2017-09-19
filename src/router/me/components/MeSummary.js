@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 import { Icon } from 'react-native-elements';
+import { normalize } from '../../../utils/fontResponsive';
 
 class MeSummary extends Component {
   renderImage() {
@@ -51,19 +52,19 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',           
   },
   textStyle: {
-    fontSize: 17,
+    fontSize: normalize(17),
     paddingTop: 5,
     color: '#000',
     fontFamily: 'Cloud-Light'    
   },
   textsmallStyle: {
-    fontSize: 15,
+    fontSize: normalize(15),
     paddingTop: 5,
     color: '#000',
     fontFamily: 'Cloud-Light'
   },
   textColorStyle: {
-    fontSize: 15,
+    fontSize: normalize(15),
     backgroundColor: '#153d8a',    
     color: '#ffffff',
     fontFamily: 'Cloud-Light'

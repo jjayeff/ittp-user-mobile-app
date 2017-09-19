@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
+import { normalize } from '../../../utils/fontResponsive';
 
 const BarcodeImage = (props) => {
   const { 
@@ -22,7 +23,7 @@ const BarcodeImage = (props) => {
         title='กดเพื่อขยายภาพ'  
         color='#000'
         fontFamily='Cloud-Light'
-        fontSize={13}   
+        fontSize={normalize(13)}   
         backgroundColor='#fff'
         buttonStyle={buttonStyle}            
       /> 

@@ -74,7 +74,10 @@ class TransactionList extends Component {
   }
   render() {
     return (
-      <View showsButtons loop={false} style={{ width: '100%' }} >
+      <View
+        showsButtons loop={false} 
+        style={{ width: '100%' }}
+      >
           {this.renderComponent()}
       </View>
     );
