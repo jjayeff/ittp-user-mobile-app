@@ -5,6 +5,7 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 import { Icon } from 'react-native-elements';
+import { normalize } from '../../utils/fontResponsive';
 
 const CardIcon = (props) => {
   const { title, icon, iconColor } = props;
@@ -27,7 +28,8 @@ const CardIcon = (props) => {
     },
     textStyle: {
       fontFamily: 'Cloud-Light', 
-      paddingTop: 2 
+      paddingTop: 2,
+      fontSize: normalize(14)      
     }
   };
   const { containerStyle, iconStyle, textStyle } = styles;

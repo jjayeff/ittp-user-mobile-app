@@ -2,7 +2,6 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { CardIcon, CardIcons } from '../../../components/common';
 
-
 const CardHome = (props) => {
   const { containerStyle, rowStyle } = styles;
   const { me, history, barcode, product } = props.onPress;

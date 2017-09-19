@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, ScrollView, Text } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import Swiper from 'react-native-swiper';
 import TransactionSummary from './TransactionSummary';
 import TransactionList from './TransactionList';

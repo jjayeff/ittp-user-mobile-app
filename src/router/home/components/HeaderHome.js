@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
-import { List, ListItem } from 'react-native-elements';
+import { View, Text, StyleSheet } from 'react-native';
+import { List, ListItem, Icon } from 'react-native-elements';
 import { Actions } from 'react-native-router-flux';
+import { normalize } from '../../../utils/fontResponsive';
 
 class HeaderHome extends Component {
   onPressMe() {
     Actions.me();
   }
+  renderComponent() {
+    const { textStyle } = styles;
+    const { firstname, lastname } = this.props;    
+    return (
+      <View style={{ flexDirection: 'row', paddingLeft: 10 }}>
+        <Text style={textStyle}>{`คุณ ${firstname} ${lastname} `}</Text>
+      </View>
+    );
+  }
   render() {
-    const { firstname, lastname } = this.props;
     return (
       <List>
         <ListItem
           onPress={this.onPressMe}
           roundAvatar
           title={'สวัสดี'}
-          subtitle={`คุณ ${firstname} ${lastname} `}
-          subtitleStyle={{ fontFamily: 'Cloud-Light' }}
+          subtitle={this.renderComponent()}
           avatar={require('../../../../store/image/test.jpeg')}
           fontFamily='Cloud-Light'
           chevronColor='#366dc0'
@@ -24,5 +33,13 @@ class HeaderHome extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  textStyle: { 
+    color: '#989898', 
+    fontFamily: 'Cloud-Bold', 
+    fontSize: normalize(13) 
+  }
+});
 
 export default HeaderHome;

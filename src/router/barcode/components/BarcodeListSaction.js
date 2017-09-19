@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import {
-  View,
-} from 'react-native';
-import { ListItem } from 'react-native-elements';
+import { View, Text, StyleSheet } from 'react-native';
+import { ListItem, Icon } from 'react-native-elements';
 import { DateFormat } from '../../../utils/base';
+import { normalize } from '../../../utils/fontResponsive';
 
 class TransactionListSaction extends Component {
   trcAvatar(icon) {
@@ -17,6 +16,15 @@ class TransactionListSaction extends Component {
       default:
         return require('../../../../store/image/banks/ittp.png');
     }
+  }
+  renderDateComponent(date) {
+    const { textStyle } = styles;
+    return (
+      <View style={{ flexDirection: 'row', paddingLeft: 10 }}>
+        <Icon name='schedule' color='#989898' size={normalize(15)} />
+        <Text style={textStyle}>{DateFormat(date)}</Text>
+      </View>
+    );
   }
   render() {
     const {
@@ -32,7 +40,7 @@ class TransactionListSaction extends Component {
           key={index}
           roundAvatar
           title={trc.name}
-          subtitle={DateFormat(date)}
+          subtitle={this.renderDateComponent(date)}
           subtitleStyle={{ fontFamily: 'Cloud-Light' }}
           hideChevron
           rightTitle={cash}
@@ -45,5 +53,15 @@ class TransactionListSaction extends Component {
     );
   }
 } 
+
+const styles = StyleSheet.create({
+  textStyle: { 
+    paddingLeft: 4, 
+    paddingTop: 4, 
+    color: '#989898', 
+    fontFamily: 'Cloud-Bold', 
+    fontSize: normalize(13) 
+  }
+});
 
 export default TransactionListSaction;
