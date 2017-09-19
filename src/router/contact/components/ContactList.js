@@ -18,7 +18,13 @@ class ContactList extends Component {
       {
         title: 'ศูนย์บริการลูกค้า',
         icon: 'phone',
-        onPress: this.onPressPhone                
+        onPress: this.onPressPhone,
+        rightTitle: '02-153-9580'            
+      },
+      {
+        title: 'ไลน์',
+        icon: 'line',
+        rightTitle: '@ittp'                    
       },
       {
         title: 'Facebook Fanpage',
@@ -26,7 +32,7 @@ class ContactList extends Component {
         onPress: this.onPressFacebook        
       },
       {
-        title: 'Webpage',
+        title: 'เว็บไซต์',
         icon: 'web',
         onPress: this.onPressWedpage        
       },

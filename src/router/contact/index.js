@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { Header, Bottom } from '../../components/common';
+import { Header } from '../../components/common';
 import { CONTACT } from '../../texts';
 import ContactComponent from './components/Contact';
 
@@ -15,7 +15,6 @@ class Contact extends Component {
       <View style={containerStyle}>
         <Header headerText={CONTACT} onPress={this.onPressBack} />
         <ContactComponent />
-        <Bottom selectedTab={CONTACT} />
       </View>
     );
   }
