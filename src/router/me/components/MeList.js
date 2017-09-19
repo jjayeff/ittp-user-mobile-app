@@ -51,8 +51,9 @@ class MeList extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#153d8a',
+    backgroundColor: '#e6eaed',
     width: '100%',
+    paddingBottom: 25,            
   },
 });
 

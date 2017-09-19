@@ -38,6 +38,7 @@ class Barcode extends Component {
 const styles = StyleSheet.create({
   containerStyle: {         
     flex: 1, 
+    paddingBottom: 40,
   },
   text: {
     color: '#fff',

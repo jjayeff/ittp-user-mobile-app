@@ -66,7 +66,8 @@ class Home extends Component {
 const styles = StyleSheet.create({
   containerStyle: {         
     flex: 1,
-    flexDirection: 'column',   
+    flexDirection: 'column', 
+    paddingBottom: 40,    
   },
   circleStyle: {
     borderRadius: 15,

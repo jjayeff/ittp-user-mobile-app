@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   loanStyle: {         
     flex: 1,
     flexDirection: 'column',   
-    paddingBottom: 40, 
+    paddingBottom: 40,     
   },
   text: {
     fontSize: 30,

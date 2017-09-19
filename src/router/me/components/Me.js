@@ -22,7 +22,7 @@ class Me extends Component {
 const styles = StyleSheet.create({
   meStyle: {         
     flex: 1,
-    justifyContent: 'space-between',   
+    justifyContent: 'space-between',     
   },
   text: {
     color: '#fff',

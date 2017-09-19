@@ -18,7 +18,7 @@ class CardProduct extends Component {
   render() {
     return (
       <ScrollView>
-        <View>
+        <View style={{ paddingBottom: 30 }}>
           {this.renderComponents()}
         </View>
       </ScrollView>
