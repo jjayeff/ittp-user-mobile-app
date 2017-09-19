@@ -10,7 +10,7 @@ const BarcodeImage = (props) => {
   const { onPress } = props;
   return (
     <View style={containerStyle}>
-      <View style={{ alignItems: 'center', padding: 10 }}>
+      <View style={{ alignItems: 'center', padding: 10, paddingTop: 20 }}>
         <Image
           style={{ width: '100%', height: 100, }}
           source={require('../../../../store/image/barcode-test.png')}      

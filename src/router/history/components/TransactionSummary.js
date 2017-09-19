@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingRight: 30,
     paddingLeft: 30,  
-    paddingBottom: 15,
     backgroundColor: '#fff',              
   },
   detailBackLoanStyle: {       

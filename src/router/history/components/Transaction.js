@@ -9,10 +9,8 @@ class Transaction extends Component {
     const { loanStyle } = styles;   
     return this.props.loans.map(loan => 
         <View style={loanStyle} key={loan.loan_id}>
-          <View style={{ height: 80 }}>
-            <TransactionSummary loan={loan} />        
-          </View>
           <ScrollView>
+            <TransactionSummary loan={loan} />        
             <TransactionList transactions={this.props.transactions} loan={loan} />  
           </ScrollView>
         </View>

@@ -51,13 +51,13 @@ class TransactionListSaction extends Component {
           fontFamily='Cloud-Light'
         />
         <Modal isVisible={this.state.isModalVisible} >
-        <View style={{ flex: 1, height: 100 }}>
-          <ModalComponent
-            onPress={this.hideModal} 
-            Modal={() => <ModalTransactionDetail transaction={item} />} 
-          />
-        </View>
-      </Modal>
+          <View style={{ flex: 1, height: 100 }}>
+            <ModalComponent
+              onPress={this.hideModal} 
+              Modal={() => <ModalTransactionDetail transaction={item} />} 
+            />
+          </View>
+        </Modal>
     </View>
     );
   }

@@ -8,10 +8,12 @@ class Me extends Component {
     const { meStyle } = styles;
     return (
       <View style={meStyle}>
-        <View style={{ height: 200 }}>
-          <MeSummary /> 
-        </View>
-        <MeList />
+        <ScrollView>
+          <View style={{ height: 200 }}>
+            <MeSummary /> 
+          </View>
+          <MeList />
+        </ScrollView>
       </View>
     );
   }

@@ -11,9 +11,9 @@ class Barcode extends Component {
     const { containerStyle } = styles;   
     return this.props.loans.loanDb.map((loan) => 
       <View style={containerStyle} key={loan.loan_id}>
-        <BarcodeSummary loan={loan} /> 
         <ScrollView>
-          <BarcodeImage loan={loan} transactions={this.props.transactions} />  
+          <BarcodeSummary loan={loan} /> 
+          <BarcodeImage loan={loan} transactions={this.props.transactions} />           
           <BarcodeList transactions={this.props.transactions} loan={loan} />  
         </ScrollView>
       </View>

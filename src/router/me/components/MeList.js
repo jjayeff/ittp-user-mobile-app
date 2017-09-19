@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { CardLinkIcon } from '../../../components/common';
 
@@ -13,10 +13,6 @@ class MeList extends Component {
         title: 'ข้อมูลส่วนตัว',
         icon: 'account-circle',
         onPress: this.onPressInfo
-      },
-      {
-        title: 'ที่อยู่',
-        icon: 'home'
       },
     ];
     const list2 = [
@@ -44,13 +40,11 @@ class MeList extends Component {
       },
     ];
     return (
-      <ScrollView>
-        <View style={styles.container}>
-          <CardLinkIcon list={list1} />
-          <CardLinkIcon list={list2} />
-          <CardLinkIcon list={list3} />
-        </View>
-      </ScrollView>
+      <View style={styles.container}>
+        <CardLinkIcon list={list1} />
+        <CardLinkIcon list={list2} />
+        <CardLinkIcon list={list3} />
+      </View>
     );
   }
 }

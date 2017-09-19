@@ -32,6 +32,7 @@ export const LOAN = 'สัญญา';
 export const HISTORY = 'รายการ';
 export const BARCODE = 'บาร์โค้ด';
 export const ME = 'ฉัน';
+export const PRODUCT = 'ประเภทสัญญา';
 
 //etc
 export const BATH = 'บาท';

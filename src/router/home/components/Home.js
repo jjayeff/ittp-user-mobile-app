@@ -10,7 +10,7 @@ import { Spinner } from '../../../components/common';
 
 class Home extends Component {
   componentDidMount() {
-    this.props.fetchLoansCID(CID);
+    // this.props.fetchLoansCID(CID);
   }
   onPressLoan() {
     Actions.loans();
@@ -24,6 +24,9 @@ class Home extends Component {
   onPressMe() {
     Actions.me();
   }
+  onPressProduct() {
+    Actions.product();
+  }
   renderComponents() {
     const { containerStyle } = styles;   
     let total = 0; 
@@ -32,7 +35,8 @@ class Home extends Component {
     const onPress = {
       history: this.onPressHistory,
       barcode: this.onPressBarcode,
-      me: this.onPressMe
+      me: this.onPressMe,
+      product: this.onPressProduct      
     };    
     return (
       <View style={containerStyle}>
