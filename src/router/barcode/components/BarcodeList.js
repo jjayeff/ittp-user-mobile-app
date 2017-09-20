@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import { Money } from '../../../utils/base';
 import {
@@ -15,6 +15,7 @@ import {
   BATH,
 } from '../../../texts';
 import BarcodeListSaction from './BarcodeListSaction';
+import { normalize } from '../../../utils/fontResponsive';
 
 class BarcodeList extends Component {
   trcBank(trc) {
@@ -50,6 +51,7 @@ class BarcodeList extends Component {
     }
   }
   renderComponent() {
+    const { textStyle } = styles;
     return (
       <View style={{ paddingTop: 20 }}>
         <List>
@@ -57,6 +59,7 @@ class BarcodeList extends Component {
             roundAvatar
             title='การชำระล่าสุด'
             subtitle='(แสดงรายการชำระย้อนหลัง 90 วัน)'
+            subtitleStyle={textStyle}
             fontFamily='Cloud-Light'
           />
           {
@@ -88,5 +91,13 @@ class BarcodeList extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  textStyle: { 
+    color: '#989898', 
+    fontFamily: 'Cloud-Bold', 
+    fontSize: normalize(13) 
+  }
+});
 
 export default BarcodeList;

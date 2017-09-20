@@ -13,6 +13,9 @@ class MeList extends Component {
   onPressPlace() {
     Actions.place();
   }
+  onPressSubPlace() {
+    Actions.subplace();
+  }
   render() {
     const list1 = [
       {
@@ -20,16 +23,21 @@ class MeList extends Component {
         icon: 'account-circle',
         onPress: this.onPressInfo
       },
-    ];
-    const list2 = [
       {
         title: 'ช่องทางการจ่ายเงิน',
         icon: 'payment'
       },
+    ];
+    const list2 = [
       {
         title: 'สถานที่ติดต่อ',
         icon: 'account-balance',
         onPress: this.onPressPlace        
+      },
+      {
+        title: 'ตัวแทนร้านค้า',
+        icon: 'record-voice-over',
+        onPress: this.onPressSubPlace        
       },
       {
         title: 'ช่องทางติดต่อ',

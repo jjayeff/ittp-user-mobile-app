@@ -17,9 +17,9 @@ class CardProductSaction extends Component {
       <View style={{ width: '100%' }}>
         <Card
           title={title}
+          titleStyle={{ fontFamily: 'Cloud-Light' }}
           image={image}
           imageStyle={{ width: 140, height: 140, alignSelf: 'center' }}
-          fontFamily='Cloud-Light'
         >
           <Text style={{ marginBottom: 10, fontFamily: 'Cloud-Light', alignSelf: 'center' }}>
             {subtitle}

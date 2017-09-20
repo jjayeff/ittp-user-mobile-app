@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 import Communications from 'react-native-communications';
-import CardPlaceSaction from './CardPlaceSaction';
-import { DataPlace } from './DataPlace';
+import CardSubPlaceSaction from './CardSubPlaceSaction';
+import { DataSubPlace } from './DataPlace';
 
-class CardPlace extends Component {
+class CardSubPlace extends Component {
   renderComponents() {
     return (
       <View>
         {
-          DataPlace.map((item, i) => (
-            <CardPlaceSaction 
+          DataSubPlace.map((item, i) => (
+            <CardSubPlaceSaction
               key={i} 
               data={item} 
               onPress={() => Communications.phonecall(item.tel, true)} 
@@ -31,4 +31,4 @@ class CardPlace extends Component {
   }
 }
 
-export default CardPlace;
+export default CardSubPlace;
