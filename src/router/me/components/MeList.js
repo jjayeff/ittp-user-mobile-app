@@ -16,6 +16,9 @@ class MeList extends Component {
   onPressSubPlace() {
     Actions.subplace();
   }
+  onPressQuestion() {
+    Actions.question();
+  }
   render() {
     const list1 = [
       {
@@ -48,7 +51,8 @@ class MeList extends Component {
     const list3 = [
       {
         title: 'คำถามที่พบบ่อยๆ',
-        icon: '?'
+        icon: '?',
+        onPress: this.onPressQuestion
       },
       {
         title: 'เกี่ยวกับบริษัทไอทีทีพี',

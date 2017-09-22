@@ -32,12 +32,12 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',           
   },
   textStyle: {
-    fontSize: normalize(17),
+    fontSize: normalize(18),
     fontFamily: 'Cloud-Light',
     color: '#153d8a'
   },
   textColorStyle: {
-    fontSize: normalize(12),
+    fontSize: normalize(14),
     backgroundColor: '#153d8a',    
     color: '#ffffff'          
   }

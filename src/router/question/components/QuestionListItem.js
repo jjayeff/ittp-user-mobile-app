@@ -6,6 +6,7 @@ import {
   LayoutAnimation
 } from 'react-native';
 import { CardSection } from '../../../components/common';
+import { normalize } from '../../../utils/fontResponsive';
 
 class QuestionListItem extends Component {
   componentWillUpdate() {
@@ -16,10 +17,12 @@ class QuestionListItem extends Component {
     const { library, selectionQuestionId } = this.props;
     if (library.id === selectionQuestionId) {
       return (
-        <CardSection>        
-          <Text style={{ flex: 1 }}>
-            {library.description}
-          </Text>
+        <CardSection>
+          <View style={{ padding: 10 }}>    
+            <Text style={{ fontFamily: 'Cloud-Light' }}>
+              {library.description}
+            </Text>
+          </View>
         </CardSection>
         
       );
@@ -48,8 +51,9 @@ class QuestionListItem extends Component {
 
 const styles = {
   titleStyle: {
-    fontSize: 18,
+    fontSize: normalize(18),
     paddingLeft: 15,
+    fontFamily: 'Cloud-Light'
   }
 };
 

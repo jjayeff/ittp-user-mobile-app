@@ -56,17 +56,17 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',           
   },
   textStyle: {
-    fontSize: normalize(17),
+    fontSize: normalize(18),
     fontFamily: 'Cloud-Light',
     color: '#153d8a'
   },
   textsmallStyle: {
-    fontSize: normalize(13),
+    fontSize: normalize(14),
     fontFamily: 'Cloud-Light',
     color: '#153d8a'
   },
   textColorStyle: {
-    fontSize: normalize(32),
+    fontSize: normalize(30),
     fontFamily: 'Cloud-Light',
     color: 'red'          
   }

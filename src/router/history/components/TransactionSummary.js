@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',    
     justifyContent: 'space-between',            
     paddingTop: 15,
-    paddingRight: 30,
-    paddingLeft: 30,  
+    paddingRight: 15,
+    paddingLeft: 15,  
     backgroundColor: '#fff',              
   },
   detailBackLoanStyle: {       
@@ -49,17 +49,17 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',           
   },
   textStyle: {
-    fontSize: normalize(17),
+    fontSize: normalize(18),
     fontFamily: 'Cloud-Light',
     color: '#153d8a'
   },
   textsmallStyle: {
-    fontSize: normalize(12),
+    fontSize: normalize(14),
     fontFamily: 'Cloud-Light',
     color: '#153d8a'
   },
   textColorStyle: {
-    fontSize: normalize(12),
+    fontSize: normalize(14),
     backgroundColor: '#153d8a',    
     color: '#ffffff'          
   }

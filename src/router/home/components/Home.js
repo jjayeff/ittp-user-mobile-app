@@ -50,7 +50,7 @@ class Home extends Component {
       <View style={containerStyle}>
         <News />
         <HeaderHome firstname={firstname} lastname={lastname} />
-        <LoanHome onPress={this.onPressLoan} num={this.props.loans.loanDb.length} total={total} />
+        <LoanHome onPress={this.onPressLoan} num={this.props.loans.loanDb.length} total={total} />    
         <CardHome onPress={onPress} />
       </View>
     );
