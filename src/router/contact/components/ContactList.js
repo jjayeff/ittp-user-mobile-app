@@ -10,6 +10,9 @@ class ContactList extends Component {
   onPressFacebook() {
     Communications.web('https://www.facebook.com/ittpLending/');
   }
+  onPressLine() {
+    Communications.web('https://line.me/R/ti/p/%40ittp');
+  }
   onPressWedpage() {
     Communications.web('http://www.ittp.co.th/');
   }
@@ -19,12 +22,13 @@ class ContactList extends Component {
         title: 'ศูนย์บริการลูกค้า',
         icon: 'phone',
         onPress: this.onPressPhone,
-        rightTitle: '02-153-9580'            
+        rightTitle: '02-153-9580',          
       },
       {
         title: 'ไลน์',
         icon: 'line',
-        rightTitle: '@ittp'                    
+        onPress: this.onPressLine,        
+        rightTitle: '@ittp',                 
       },
       {
         title: 'Facebook Fanpage',

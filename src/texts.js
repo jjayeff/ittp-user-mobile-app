@@ -36,6 +36,7 @@ export const PRODUCT = 'ประเภทสัญญา';
 export const CONTACT = 'ช่องทางติดต่อ';
 export const PLACE = 'สถานที่ติดต่อ';
 export const SUBPLACE = 'ตัวแทนร้านค้า';
+export const QUESTION = 'คำถามที่พบบ่อย';
 
 //etc
 export const BATH = 'บาท';

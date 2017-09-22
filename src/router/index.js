@@ -10,6 +10,7 @@ import Product from './product';
 import Contact from './contact';
 import Place from './place';
 import SubPlace from './place/subIndex.js';
+import Question from './question';
 
 const RouterComponent = () => {
   return (
@@ -25,7 +26,8 @@ const RouterComponent = () => {
         <Scene key="product" component={Product} title="Product" hideNavBar />   
         <Scene key="contact" component={Contact} title="Contact" hideNavBar /> 
         <Scene key="place" component={Place} title="Place" hideNavBar /> 
-        <Scene key="subplace" component={SubPlace} title="SubPlace" hideNavBar />         
+        <Scene key="subplace" component={SubPlace} title="SubPlace" hideNavBar /> 
+        <Scene key="question" component={Question} title="Question" hideNavBar />
       </Scene> 
     </Router>
   );

@@ -30,6 +30,9 @@ class Home extends Component {
   onPressContact() {
     Actions.contact();
   }
+  onPressQuestion() {
+    Actions.question();
+  }
   renderComponents() {
     const { containerStyle } = styles;   
     let total = 0; 
@@ -40,7 +43,8 @@ class Home extends Component {
       barcode: this.onPressBarcode,
       me: this.onPressMe,
       product: this.onPressProduct,
-      contact: this.onPressContact,          
+      contact: this.onPressContact,   
+      question: this.onPressQuestion       
     };    
     return (
       <View style={containerStyle}>
