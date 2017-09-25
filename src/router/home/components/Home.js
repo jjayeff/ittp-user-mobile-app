@@ -33,6 +33,12 @@ class Home extends Component {
   onPressQuestion() {
     Actions.question();
   }
+  onPressChannel() {
+    Actions.channel();
+  }
+  onPressPlace() {
+    Actions.place();
+  }
   renderComponents() {
     const { containerStyle } = styles;
     let total = 0;
@@ -43,7 +49,9 @@ class Home extends Component {
       barcode: this.onPressBarcode,
       product: this.onPressProduct,
       contact: this.onPressContact,
-      question: this.onPressQuestion
+      question: this.onPressQuestion,
+      channel: this.onPressChannel,
+      place: this.onPressPlace,
     };
     return (
       <View style={containerStyle}>

@@ -29,6 +29,9 @@ class MeList extends Component {
   onPressProduct() {
     Actions.product();
   }
+  onPressChannel() {
+    Actions.channel();
+  }
   render() {
     const list1 = [
       {
@@ -38,7 +41,8 @@ class MeList extends Component {
       },
       {
         title: CHANNEL_PAYMENT,
-        icon: 'payment'
+        icon: 'payment',
+        onPress: this.onPressChannel
       },
     ];
     const list2 = [

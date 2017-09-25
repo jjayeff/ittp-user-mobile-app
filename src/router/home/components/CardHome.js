@@ -13,7 +13,7 @@ import {
 
 const CardHome = (props) => {
   const { containerStyle, rowStyle } = styles;
-  const { history, barcode, product, contact, question } = props.onPress;
+  const { history, barcode, product, contact, question, channel, place } = props.onPress;
   return (
     <View style={containerStyle}>
       <View style={rowStyle}>
@@ -21,11 +21,11 @@ const CardHome = (props) => {
         <CardIcon title={PAYMENT} icon='payment' iconColor='#366dc0' onPress={barcode} />
       </View>
       <View style={rowStyle}>
-        <CardIcon title={CHANNEL_PAYMENT} icon='get-app' iconColor='#03A9F4' />
+        <CardIcon title={CHANNEL_PAYMENT} icon='get-app' iconColor='#03A9F4' onPress={channel} />
         <CardIcon title={CONTACT} icon='message' iconColor='#366dc0' onPress={contact} />
       </View>
       <View style={rowStyle}>
-        <CardIcons title={PLACE} icon='home' iconColor='#366dc0' />
+        <CardIcons title={PLACE} icon='home' iconColor='#366dc0' onPress={place} />
         <CardIcons title={PRODUCT} icon='account-balance' iconColor='#03A9F4' onPress={product} />
         <CardIcons title={QUESTION} icon='?' iconColor='#ED6351' onPress={question} />
       </View>

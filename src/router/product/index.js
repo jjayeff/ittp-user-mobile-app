@@ -7,7 +7,7 @@ import ProductComponent from './components/Product';
 
 class Product extends Component {
   onPressBack() {
-    Actions.me();    
+    Actions.me();
   }
   render() {
     const { containerStyle } = styles;
