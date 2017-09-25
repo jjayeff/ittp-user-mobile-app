@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { Header } from '../../components/common';
-import { PRODUCT } from '../../texts';
-import ProductComponent from './components/Product';
+import { CHANNEL } from '../../texts';
 
-class Product extends Component {
+class Channel extends Component {
   onPressBack() {
     Actions.me();    
   }
@@ -13,8 +12,7 @@ class Product extends Component {
     const { containerStyle } = styles;
     return (
       <View style={containerStyle}>
-        <Header headerText={PRODUCT} onPress={this.onPressBack} />
-        <ProductComponent />
+        <Header headerText={CHANNEL} onPress={this.onPressBack} />
       </View>
     );
   }
@@ -28,4 +26,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Product;
+export default Channel;

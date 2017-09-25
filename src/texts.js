@@ -37,6 +37,7 @@ export const CONTACT = 'ช่องทางติดต่อ';
 export const PLACE = 'สถานที่ติดต่อ';
 export const SUBPLACE = 'ตัวแทนร้านค้า';
 export const QUESTION = 'คำถามที่พบบ่อย';
+export const CHANNEL = 'ช่องทางจ่ายเงิน';
 
 //etc
 export const BATH = 'บาท';

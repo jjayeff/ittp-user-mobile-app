@@ -1,57 +1,57 @@
 export const DataQuestion = [
     {
       id: 0,
-      title: 'webpack',
-      description: 'Webpack is a module bundler. It pack ......'
+      title: 'คำถามที่พบบ่อย',
+      description: 'อธิบายคำถามที่พบบ่อยๆ'
     },
     {
       id: 1,
-      title: 'webpack',
-      description: 'Webpack is a module bundler. It pack ......'
+      title: 'คำถามที่พบบ่อย',
+      description: 'อธิบายคำถามที่พบบ่อยๆ'
     },
     {
       id: 2,
-      title: 'webpack',
-      description: 'Webpack is a module bundler. It pack ......'
+      title: 'คำถามที่พบบ่อย',
+      description: 'อธิบายคำถามที่พบบ่อยๆ'
     },
     {
       id: 3,
-      title: 'webpack',
-      description: 'Webpack is a module bundler. It pack ......'
+      title: 'คำถามที่พบบ่อย',
+      description: 'อธิบายคำถามที่พบบ่อยๆ'
     },
     {
       id: 4,
-      title: 'webpack',
-      description: 'Webpack is a module bundler. It pack ......'
+      title: 'คำถามที่พบบ่อย',
+      description: 'อธิบายคำถามที่พบบ่อยๆ'
     },
     {
       id: 5,
-      title: 'webpack',
-      description: 'Webpack is a module bundler. It pack ......'
+      title: 'คำถามที่พบบ่อย',
+      description: 'อธิบายคำถามที่พบบ่อยๆ'
     },
     {
       id: 6,
-      title: 'webpack',
-      description: 'Webpack is a module bundler. It pack ......'
+      title: 'คำถามที่พบบ่อย',
+      description: 'อธิบายคำถามที่พบบ่อยๆ'
     },
     {
       id: 7,
-      title: 'webpack',
-      description: 'Webpack is a module bundler. It pack ......'
+      title: 'คำถามที่พบบ่อย',
+      description: 'อธิบายคำถามที่พบบ่อยๆ'
     },
     {
       id: 8,
-      title: 'webpack',
-      description: 'Webpack is a module bundler. It pack ......'
+      title: 'คำถามที่พบบ่อย',
+      description: 'อธิบายคำถามที่พบบ่อยๆ'
     },
     {
       id: 9,
-      title: 'webpack',
-      description: 'Webpack is a module bundler. It pack ......'
+      title: 'คำถามที่พบบ่อย',
+      description: 'อธิบายคำถามที่พบบ่อยๆ'
     },
     {
       id: 10,
-      title: 'webpack',
-      description: 'Webpack is a module bundler. It pack ......'
+      title: 'คำถามที่พบบ่อย',
+      description: 'อธิบายคำถามที่พบบ่อยๆ'
     }
 ];

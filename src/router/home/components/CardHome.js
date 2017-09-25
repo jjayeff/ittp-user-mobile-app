@@ -12,11 +12,11 @@ const CardHome = (props) => {
         <CardIcon title='จ่ายเงิน' icon='payment' iconColor='#366dc0' onPress={barcode} /> 
       </View>
       <View style={rowStyle}>
-        <CardIcon title='ข้อมูลส่วนตัว' icon='person' iconColor='#03A9F4' />
-        <CardIcon title='ช่องทางติดต่อ' icon='home' iconColor='#366dc0' onPress={contact} /> 
+        <CardIcon title='ช่องทางจ่ายเงิน' icon='get-app' iconColor='#03A9F4' />        
+        <CardIcon title='ช่องทางติดต่อ' icon='message' iconColor='#366dc0' onPress={contact} /> 
       </View>
       <View style={rowStyle}>
-        <CardIcons title='ช่องทางจ่ายเงิน' icon='get-app' iconColor='#366dc0' />
+        <CardIcons title='สถานที่ติดต่อ' icon='home' iconColor='#366dc0' />
         <CardIcons title='ประเภทสัญญา' icon='account-balance' iconColor='#03A9F4' onPress={product} /> 
         <CardIcons title='คำถามที่พบบ่อย' icon='?' iconColor='#ED6351' onPress={question} />         
       </View>

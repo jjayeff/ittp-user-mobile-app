@@ -4,9 +4,6 @@ import { Actions } from 'react-native-router-flux';
 import { CardLinkIcon } from '../../../components/common';
 
 class MeList extends Component {
-  onPressInfo() {
-    // Actions.info();
-  }
   onPressContact() {
     Actions.contact();
   }
@@ -19,12 +16,15 @@ class MeList extends Component {
   onPressQuestion() {
     Actions.question();
   }
+  onPressProduct() {
+    Actions.product();
+  }
   render() {
     const list1 = [
       {
-        title: 'ข้อมูลส่วนตัว',
-        icon: 'account-circle',
-        onPress: this.onPressInfo
+        title: 'ประเภทสัญญา',
+        icon: 'account-balance',
+        onPress: this.onPressProduct
       },
       {
         title: 'ช่องทางการจ่ายเงิน',
@@ -34,7 +34,7 @@ class MeList extends Component {
     const list2 = [
       {
         title: 'สถานที่ติดต่อ',
-        icon: 'account-balance',
+        icon: 'home',
         onPress: this.onPressPlace        
       },
       {
