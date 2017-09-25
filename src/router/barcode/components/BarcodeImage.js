@@ -1,47 +1,49 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import Barcode from 'react-native-barcode-builder';
 import { Button } from 'react-native-elements';
 import { normalize } from '../../../utils/fontResponsive';
 
 const BarcodeImage = (props) => {
-  const { 
+  const {
     containerStyle,
     buttonStyle
   } = styles;
   const { onPress } = props;
   return (
     <View style={containerStyle}>
-      <View style={{ alignItems: 'center', padding: 10, paddingTop: 20 }}>
-        <Image
-          style={{ width: '100%', height: 100, }}
-          source={require('../../../../store/image/barcode-test.png')}      
+      <View style={{ alignItems: 'center', padding: 20 }}>
+        <Barcode
+          value="010555414604900 59040030152 050717 2685500"
+          format="CODE128"
+          width={0.9}
         />
       </View>
-      <Button 
+      <Button
         onPress={onPress}
-        icon={{ name: 'search', color: '#000' }}          
-        title='กดเพื่อขยายภาพ'  
+        icon={{ name: 'search', color: '#000' }}
+        title='กดเพื่อขยายภาพ'
         color='#000'
         fontFamily='Cloud-Light'
-        fontSize={normalize(13)}   
+        fontSize={normalize(13)}
         backgroundColor='#fff'
-        buttonStyle={buttonStyle}            
-      /> 
-    </View>   
+        buttonStyle={buttonStyle}
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  containerStyle: {       
-    flex: 1,         
+  containerStyle: {
+    flex: 1,
     flexDirection: 'column'
   },
   buttonStyle: {
     borderRadius: 25,
-    width: '40%', 
+    width: '40%',
     height: 35,
-    borderColor: '#989898', 
-    borderWidth: 1, 
+    borderColor: '#989898',
+    borderWidth: 1,
     alignSelf: 'center'
   },
 });
