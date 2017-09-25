@@ -23,32 +23,32 @@ class LoanButton extends Component {
             fontFamily='Cloud-Light'
             backgroundColor='#153d8a'
             buttonStyle={{ borderRadius: 25 }}
-          />    
-          <Button 
+          />
+          <Button
             onPress={this.showModal}
-            icon={{ name: 'cached' }}          
-            title={CAL_CLOSE_CONTRACT}  
-            fontFamily='Cloud-Light'   
+            icon={{ name: 'cached' }}
+            title={CAL_CLOSE_CONTRACT}
+            fontFamily='Cloud-Light'
             backgroundColor='#153d8a'
-            buttonStyle={{ borderRadius: 25 }}            
+            buttonStyle={{ borderRadius: 25 }}
           />
         </View>
         <Modal isVisible={this.state.isModalVisible} >
           <View style={{ flex: 1, height: 100 }}>
             <ModalComponent onPress={this.hideModal} Modal={() => <ModalCalCloseContract loan={this.props.loan} />} />
           </View>
-        </Modal>      
+        </Modal>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  containerStyle: {       
+  containerStyle: {
     flex: 1,
-    alignItems: 'center',    
-    justifyContent: 'space-between',       
-    paddingTop: 5, 
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingTop: 5,
   },
 });
 

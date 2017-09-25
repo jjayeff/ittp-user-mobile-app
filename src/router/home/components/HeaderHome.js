@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
-import { Actions } from 'react-native-router-flux';
 import { normalize } from '../../../utils/fontResponsive';
+import {
+  HELLO,
+  YOU
+} from '../../../texts';
 
 class HeaderHome extends Component {
-  onPressMe() {
-    Actions.me();
-  }
   renderComponent() {
     const { textStyle } = styles;
-    const { firstname, lastname } = this.props;    
+    const { firstname, lastname } = this.props;
     return (
       <View style={{ flexDirection: 'row', paddingLeft: 10 }}>
-        <Text style={textStyle}>{`คุณ ${firstname} ${lastname} `}</Text>
+        <Text style={textStyle}>{`${YOU} ${firstname} ${lastname} `}</Text>
       </View>
     );
   }
   render() {
+    const { onPress } = this.props;
     return (
       <List>
         <ListItem
-          onPress={this.onPressMe}
+          onPress={onPress}
           roundAvatar
-          title={'สวัสดี'}
+          title={HELLO}
           titleStyle={{ fontSize: normalize(20) }}
           subtitle={this.renderComponent()}
           avatar={require('../../../../store/image/test.jpeg')}
@@ -36,10 +37,10 @@ class HeaderHome extends Component {
 }
 
 const styles = StyleSheet.create({
-  textStyle: { 
-    color: '#989898', 
-    fontFamily: 'Cloud-Bold', 
-    fontSize: normalize(17) 
+  textStyle: {
+    color: '#989898',
+    fontFamily: 'Cloud-Bold',
+    fontSize: normalize(17)
   }
 });
 

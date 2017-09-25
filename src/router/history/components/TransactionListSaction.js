@@ -60,23 +60,23 @@ class TransactionListSaction extends Component {
         <Modal isVisible={this.state.isModalVisible} >
           <View style={{ flex: 1, height: 100 }}>
             <ModalComponent
-              onPress={this.hideModal} 
-              Modal={() => <ModalTransactionDetail transaction={item} />} 
+              onPress={this.hideModal}
+              Modal={() => <ModalTransactionDetail transaction={item} />}
             />
           </View>
         </Modal>
-    </View>
+      </View>
     );
   }
-} 
+}
 
 const styles = StyleSheet.create({
-  textStyle: { 
-    paddingLeft: 4, 
-    paddingTop: 4, 
-    color: '#989898', 
-    fontFamily: 'Cloud-Bold', 
-    fontSize: normalize(13) 
+  textStyle: {
+    paddingLeft: 4,
+    paddingTop: 4,
+    color: '#989898',
+    fontFamily: 'Cloud-Bold',
+    fontSize: normalize(13)
   }
 });
 

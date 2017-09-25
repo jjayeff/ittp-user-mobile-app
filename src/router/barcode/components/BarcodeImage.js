@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import Barcode from 'react-native-barcode-builder';
 import { Button } from 'react-native-elements';
 import { normalize } from '../../../utils/fontResponsive';
+import { ZOOM } from '../../../texts';
 
 const BarcodeImage = (props) => {
   const {
@@ -22,7 +23,7 @@ const BarcodeImage = (props) => {
       <Button
         onPress={onPress}
         icon={{ name: 'search', color: '#000' }}
-        title='กดเพื่อขยายภาพ'
+        title={ZOOM}
         color='#000'
         fontFamily='Cloud-Light'
         fontSize={normalize(13)}

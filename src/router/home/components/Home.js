@@ -34,23 +34,22 @@ class Home extends Component {
     Actions.question();
   }
   renderComponents() {
-    const { containerStyle } = styles;   
-    let total = 0; 
+    const { containerStyle } = styles;
+    let total = 0;
     const { firstname, lastname } = this.props.loans.loanDb[0];
     this.props.loans.loanDb.map(loan => total += loan.cf_principal);
     const onPress = {
       history: this.onPressHistory,
       barcode: this.onPressBarcode,
-      me: this.onPressMe,
       product: this.onPressProduct,
-      contact: this.onPressContact,   
-      question: this.onPressQuestion       
-    };    
+      contact: this.onPressContact,
+      question: this.onPressQuestion
+    };
     return (
       <View style={containerStyle}>
         <News />
-        <HeaderHome firstname={firstname} lastname={lastname} />
-        <LoanHome onPress={this.onPressLoan} num={this.props.loans.loanDb.length} total={total} />    
+        <HeaderHome firstname={firstname} lastname={lastname} onPress={this.onPressMe} />
+        <LoanHome onPress={this.onPressLoan} num={this.props.loans.loanDb.length} total={total} />
         <CardHome onPress={onPress} />
       </View>
     );
@@ -72,20 +71,20 @@ class Home extends Component {
 }
 
 const styles = StyleSheet.create({
-  containerStyle: {         
+  containerStyle: {
     flex: 1,
-    flexDirection: 'column', 
-    paddingBottom: 30,    
+    flexDirection: 'column',
+    paddingBottom: 30,
   },
   circleStyle: {
     borderRadius: 15,
     width: '32%',
     height: 120,
-    backgroundColor: '#153d8a',  
+    backgroundColor: '#153d8a',
   },
   ImageStyle: {
-    width: '97%', 
-    height: 160, 
+    width: '97%',
+    height: 160,
   },
 });
 

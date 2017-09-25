@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { TextModal } from '../../../components/common';
 import { DateFormat, Money } from '../../../utils/base';
-import { 
+import {
   CTBBL,
   CTGSB,
   BCBBL,
@@ -17,6 +17,10 @@ import {
   BBL_NAME,
   GSB_NAME,
   ITTP_NAME,
+  AMOUNT,
+  HOW_TO_PAY,
+  DATE_TRANSACTION,
+  TRAN_BANK
 } from '../../../texts';
 import { normalize } from '../../../utils/fontResponsive';
 
@@ -96,39 +100,39 @@ class ModalTransactionDetail extends Component {
   }
   render() {
     const { containerStyle, HeadertextStyle, textStyle, rowStyle } = styles;
-    const { 
+    const {
       trans_date,
       cash_in,
       trc
     } = this.props.transaction;
     return (
-    <ScrollView>
-      <View style={containerStyle}>
-        <View style={{ paddingTop: 50 }}>
-          <TextModal>
-            {this.renderBankComponent(trc)}
-          </TextModal>
-          <TextModal>
-            <View style={rowStyle}>
-              <Text style={textStyle}>จำนวนเงิน</Text>
-              <Text style={textStyle}>วิธีการชำระ</Text>
-            </View>
-            <View style={rowStyle}>
-              <Text style={HeadertextStyle}>{Money(cash_in)}</Text>
-              <Text style={HeadertextStyle}>โอนผ่านบัญชีธนาคาร</Text>
-            </View>
-          </TextModal>
-          <TextModal>
-            <View style={rowStyle}>
-              <Text style={textStyle}>วันเวลาที่ทำรายการ</Text>
-            </View>
-            <View style={rowStyle}>
-              <Text style={HeadertextStyle}>{DateFormat(trans_date)}</Text>
-            </View>
-          </TextModal>
+      <ScrollView>
+        <View style={containerStyle}>
+          <View style={{ paddingTop: 50 }}>
+            <TextModal>
+              {this.renderBankComponent(trc)}
+            </TextModal>
+            <TextModal>
+              <View style={rowStyle}>
+                <Text style={textStyle}>{AMOUNT}</Text>
+                <Text style={textStyle}>{HOW_TO_PAY}</Text>
+              </View>
+              <View style={rowStyle}>
+                <Text style={HeadertextStyle}>{Money(cash_in)}</Text>
+                <Text style={HeadertextStyle}>{TRAN_BANK}</Text>
+              </View>
+            </TextModal>
+            <TextModal>
+              <View style={rowStyle}>
+                <Text style={textStyle}>{DATE_TRANSACTION}</Text>
+              </View>
+              <View style={rowStyle}>
+                <Text style={HeadertextStyle}>{DateFormat(trans_date)}</Text>
+              </View>
+            </TextModal>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
     );
   }
 }
@@ -136,32 +140,32 @@ class ModalTransactionDetail extends Component {
 const styles = {
   containerStyle: {
     flex: 1,
-    flexDirection: 'column',    
-    justifyContent: 'space-between',                
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     paddingBottom: 15,
     paddingRight: 15,
     paddingLeft: 15,
   },
   rowStyle: {
-    flexDirection: 'row',  
-    justifyContent: 'space-between',                    
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingRight: 7,
     paddingLeft: 7,
   },
-  HeadertextStyle: {              
+  HeadertextStyle: {
     color: '#153d8a',
     fontFamily: 'Cloud-Light',
     fontSize: normalize(17),
     paddingLeft: 10,
   },
-  headerCentertextStyle: {              
+  headerCentertextStyle: {
     color: '#153d8a',
     fontFamily: 'Cloud-Light',
     fontSize: normalize(18),
     paddingLeft: 10,
     alignSelf: 'center'
   },
-  textStyle: {             
+  textStyle: {
     color: 'steelblue',
     fontFamily: 'Cloud-Light',
     fontSize: normalize(14),

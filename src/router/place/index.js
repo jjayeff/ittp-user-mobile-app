@@ -7,7 +7,7 @@ import PlaceComponent from './components/Place';
 
 class Place extends Component {
   onPressBack() {
-    Actions.me();    
+    Actions.me();
   }
   render() {
     const { containerStyle } = styles;

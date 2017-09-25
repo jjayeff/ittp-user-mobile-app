@@ -2,13 +2,14 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Money } from '../../../utils/base';
 import { normalize } from '../../../utils/fontResponsive';
+import { PRINCIPAL, BATH } from '../../../texts';
 
 const TransactionSummary = (props) => {
-  const { 
-    transactionSummaryContainerStyle, 
-    detailBackLoanStyle, 
+  const {
+    transactionSummaryContainerStyle,
+    detailBackLoanStyle,
     detailFrontLoanStyle,
-    textStyle, 
+    textStyle,
     textColorStyle,
     textsmallStyle
   } = styles;
@@ -17,36 +18,36 @@ const TransactionSummary = (props) => {
     <View style={transactionSummaryContainerStyle}>
       <View style={detailFrontLoanStyle}>
         <Text style={textStyle}>{firstname} {lastname}</Text>
-        <Text style={textsmallStyle}>เงินต้นคงเหลือ {Money(cf_principal, true)} บาท</Text>
+        <Text style={textsmallStyle}>{PRINCIPAL} {Money(cf_principal, true)} {BATH}</Text>
       </View>
       <View style={detailBackLoanStyle}>
-        <Text style={textStyle}>{loan_id}</Text>   
-        <Text style={textColorStyle}>{product_name}</Text>               
+        <Text style={textStyle}>{loan_id}</Text>
+        <Text style={textColorStyle}>{product_name}</Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  transactionSummaryContainerStyle: {       
+  transactionSummaryContainerStyle: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'center',    
-    justifyContent: 'space-between',            
+    alignItems: 'center',
+    justifyContent: 'space-between',
     paddingTop: 15,
     paddingRight: 15,
-    paddingLeft: 15,  
-    backgroundColor: '#fff',              
+    paddingLeft: 15,
+    backgroundColor: '#fff',
   },
-  detailBackLoanStyle: {       
+  detailBackLoanStyle: {
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'flex-end',           
+    alignItems: 'flex-end',
   },
-  detailFrontLoanStyle: {       
+  detailFrontLoanStyle: {
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'flex-start',           
+    alignItems: 'flex-start',
   },
   textStyle: {
     fontSize: normalize(18),
@@ -60,8 +61,8 @@ const styles = StyleSheet.create({
   },
   textColorStyle: {
     fontSize: normalize(14),
-    backgroundColor: '#153d8a',    
-    color: '#ffffff'          
+    backgroundColor: '#153d8a',
+    color: '#ffffff'
   }
 });
 

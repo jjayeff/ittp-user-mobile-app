@@ -22,42 +22,42 @@ class ContactList extends Component {
         title: 'ศูนย์บริการลูกค้า',
         icon: 'phone',
         onPress: this.onPressPhone,
-        rightTitle: '02-153-9580',          
+        rightTitle: '02-153-9580',
       },
       {
         title: 'ไลน์',
         icon: 'line',
-        onPress: this.onPressLine,        
-        rightTitle: '@ittp',                 
+        onPress: this.onPressLine,
+        rightTitle: '@ittp',
       },
       {
         title: 'Facebook Fanpage',
         icon: 'facebook',
-        onPress: this.onPressFacebook        
+        onPress: this.onPressFacebook
       },
       {
         title: 'เว็บไซต์',
         icon: 'web',
-        onPress: this.onPressWedpage        
+        onPress: this.onPressWedpage
       },
     ];
     const list2 = [
       {
         title: 'เงื่อนไขการให้บริการ',
         icon: 'error-outline',
-        onPress: this.onPressInfo 
+        onPress: this.onPressInfo
       },
       {
         title: 'นโยบายความเป็นส่วนตัว',
         icon: 'lock-outline',
-        onPress: this.onPressInfo        
+        onPress: this.onPressInfo
       },
     ];
     return (
       <ScrollView>
         <View style={styles.container}>
           <CardLinkIcon list={list1} />
-          <CardLinkIcon list={list2} />          
+          <CardLinkIcon list={list2} />
         </View>
       </ScrollView>
     );
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#e6eaed',
     width: '100%',
-    paddingBottom: 25,            
+    paddingBottom: 25,
   },
 });
 

@@ -10,17 +10,17 @@ const Barcode = () => {
     <View style={containerStyle}>
       <Header headerText={BARCODE} />
       <BarcodeComponent />
-      <Bottom selectedTab={BARCODE} />      
+      <Bottom selectedTab={BARCODE} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   containerStyle: {
-    backgroundColor: '#FFFFFF',          
+    backgroundColor: '#FFFFFF',
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between',    
+    justifyContent: 'space-between',
   },
 });
 

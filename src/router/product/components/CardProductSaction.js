@@ -4,6 +4,7 @@ import { Card, Button } from 'react-native-elements';
 import Modal from 'react-native-modal';
 import { ModalComponent } from '../../../components/common';
 import ModalProductDetail from './ModalProductDetail';
+import { CLICK_DETAIL } from '../../../texts';
 
 class CardProductSaction extends Component {
   state = {
@@ -30,14 +31,14 @@ class CardProductSaction extends Component {
             backgroundColor='#03A9F4'
             fontFamily='Cloud-Light'
             buttonStyle={{ borderRadius: 25, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
-            title='ดูรายละเอียด'
+            title={CLICK_DETAIL}
           />
         </Card>
         <Modal isVisible={this.state.isModalVisible} >
           <View style={{ flex: 1, height: 100 }}>
             <ModalComponent
-              onPress={this.hideModal} 
-              Modal={() => <ModalProductDetail data={this.props.data} />} 
+              onPress={this.hideModal}
+              Modal={() => <ModalProductDetail data={this.props.data} />}
             />
           </View>
         </Modal>

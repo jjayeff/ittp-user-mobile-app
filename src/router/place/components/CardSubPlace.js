@@ -11,10 +11,10 @@ class CardSubPlace extends Component {
         {
           DataSubPlace.map((item, i) => (
             <CardSubPlaceSaction
-              key={i} 
-              data={item} 
-              onPress={() => Communications.phonecall(item.tel, true)} 
-            />             
+              key={i}
+              data={item}
+              onPress={() => Communications.phonecall(item.tel, true)}
+            />
           ))
         }
       </View>

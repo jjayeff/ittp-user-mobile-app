@@ -17,9 +17,9 @@ const TextModal = ({ children }) => {
 };
 
 const styles = {
-  lineContainerStyle: {      
+  lineContainerStyle: {
     paddingTop: 6,
-    paddingBottom: 6,    
+    paddingBottom: 6,
   },
 };
 

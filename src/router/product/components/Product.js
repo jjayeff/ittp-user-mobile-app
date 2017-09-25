@@ -14,9 +14,9 @@ class Product extends Component {
 }
 
 const styles = StyleSheet.create({
-  containerStyle: {         
+  containerStyle: {
     flex: 1,
-    justifyContent: 'space-between',         
+    justifyContent: 'space-between',
   },
 });
 

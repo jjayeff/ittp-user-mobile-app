@@ -19,10 +19,10 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_LOANS_CID:
-    return {
-      ...state,
-      // loading: false,
-    };
+      return {
+        ...state,
+        // loading: false,
+      };
     case FETCH_LOANS_CID_SUCCESS: {
       return {
         ...state,
@@ -31,7 +31,7 @@ const reducer = (state = initialState, action) => {
         // loading: true,
       };
     }
-    case FETCH_LOANS_CID_FAILED: 
+    case FETCH_LOANS_CID_FAILED:
     default:
       return state;
   }

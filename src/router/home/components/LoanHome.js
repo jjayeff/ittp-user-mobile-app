@@ -1,52 +1,58 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import { Money } from '../../../utils/base';
-import { BATH } from '../../../texts';
 import { normalize } from '../../../utils/fontResponsive';
+import { 
+  BATH, 
+  ALL_LOAN,
+  LOAN,
+  ALL_TOTAL,
+  CLICK_DETAIL
+} from '../../../texts';
 
 class LoanHome extends Component {
   render() {
-    const {  
-      textStyle, 
+    const {
+      textStyle,
       imageStyle,
       smallTextStyle,
       bigTextStyle
     } = styles;
     const { onPress, num, total } = this.props;
     return (
-    <TouchableOpacity onPress={onPress}>
-      <View style={{ paddingBottom: 5 }}>
-        <Image 
-          style={imageStyle}
-          source={require('../../../../store/image/homes/home-account.jpg')}
-        >
-          <View style={{ paddingTop: 7 }} >
-            <Text style={textStyle}> สัญญาทั้งหมด {num} สัญญา</Text>
-            <Text style={smallTextStyle}> ยอดค้างคงเหลือ {Money(total, true)} {BATH}</Text>
-          </View>
-          <View style={{ paddingTop: 7, alignItems: 'flex-end' }}>
-            <Text style={bigTextStyle}>คลิกดูรายละเอียด</Text>
-          </View>
-        </Image>
-      </View>
-    </TouchableOpacity>
+      <TouchableOpacity onPress={onPress}>
+        <View style={{ paddingBottom: 5 }}>
+          <Image
+            style={imageStyle}
+            source={require('../../../../store/image/homes/home-account.jpg')}
+          >
+            <View style={{ paddingTop: 7 }} >
+              <Text style={textStyle}> {ALL_LOAN} {num} {LOAN}</Text>
+              <Text style={smallTextStyle}>{ALL_TOTAL} {Money(total, true)} {BATH}</Text>
+            </View>
+            <View style={{ paddingTop: 7, alignItems: 'flex-end' }}>
+              <Text style={bigTextStyle}>{CLICK_DETAIL}</Text>
+            </View>
+          </Image>
+        </View>
+      </TouchableOpacity>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  containerStyle: {         
+  containerStyle: {
     flex: 1,
-    flexDirection: 'column',   
+    flexDirection: 'column',
   },
   homeImageStyle: {
-    width: '100%', 
-    height: 160, 
+    width: '100%',
+    height: 160,
   },
   imageStyle: {
-    width: '100%', 
-    height: 130, 
-    justifyContent: 'space-between' 
+    width: '100%',
+    height: 130,
+    justifyContent: 'space-between'
   },
   bigTextStyle: {
     fontSize: normalize(30),

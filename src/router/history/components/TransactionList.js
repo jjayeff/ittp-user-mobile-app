@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { List, ListItem } from 'react-native-elements';
-import { DateFormat, Money } from '../../../utils/base';
+import { List } from 'react-native-elements';
+import { Money } from '../../../utils/base';
 import {
   CTBBL,
   CTGSB,
@@ -54,7 +54,7 @@ class TransactionList extends Component {
       <List>
         {
           this.props.transactions.map((item, i) => {
-            const cash = item.cash_in ? `-${Money(item.cash_in)} ${BATH}` : `+${Money(item.cash_out)} บาท`;
+            const cash = item.cash_in ? `-${Money(item.cash_in)} ${BATH}` : `+${Money(item.cash_out)} ${BATH}`;
             const trc = this.trcBank(item.trc);
             const transaction = {
               cash,
@@ -75,10 +75,10 @@ class TransactionList extends Component {
   render() {
     return (
       <View
-        showsButtons loop={false} 
+        showsButtons loop={false}
         style={{ width: '100%' }}
       >
-          {this.renderComponent()}
+        {this.renderComponent()}
       </View>
     );
   }

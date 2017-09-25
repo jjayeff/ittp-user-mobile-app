@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { TextModal } from '../../../components/common';
 import { normalize } from '../../../utils/fontResponsive';
+import { NAME_PRODUCT, CONDITION } from '../../../texts';
 
 class ModalProductDetail extends Component {
   renderComponents() {
@@ -32,7 +33,7 @@ class ModalProductDetail extends Component {
             <TextModal>
               <TextModal>
                 <View style={rowStyle}>
-                  <Text style={textStyle}>ชื่อประเภทสินเชื่อ</Text>
+                  <Text style={textStyle}>{NAME_PRODUCT}</Text>
                 </View>
                 <View style={rowStyle}>
                   <Text style={HeadertextStyle}>{titleDetail}</Text>
@@ -45,7 +46,7 @@ class ModalProductDetail extends Component {
             </TextModal>
             <TextModal>
               <View style={rowStyle}>
-                <Text style={HeadertextStyle}>เงื่อนไขการสมัคร {title}</Text>
+                <Text style={HeadertextStyle}>{CONDITION} {title}</Text>
               </View>
               <View style={{ paddingRight: 7, paddingLeft: 7 }}>
                 {this.renderComponents()}

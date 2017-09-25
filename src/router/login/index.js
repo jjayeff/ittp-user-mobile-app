@@ -18,11 +18,11 @@ class Login extends Component {
 }
 
 const styles = StyleSheet.create({
-  containerStyle: {        
+  containerStyle: {
     flex: 1,
-    justifyContent: 'center', 
+    justifyContent: 'center',
     alignItems: 'center',
-    height: '100%', 
+    height: '100%',
     width: '100%',
     backgroundColor: '#fff'
   },

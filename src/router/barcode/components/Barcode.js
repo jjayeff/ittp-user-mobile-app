@@ -8,15 +8,15 @@ import { Spinner } from '../../../components/common';
 
 class Barcode extends Component {
   renderDetail() {
-    const { containerStyle } = styles;   
-    return this.props.loans.loanDb.map((loan) => 
+    const { containerStyle } = styles;
+    return this.props.loans.loanDb.map((loan) =>
       <View style={containerStyle} key={loan.loan_id}>
         <ScrollView>
           <View style={{ paddingBottom: 40 }}>
-            <BarcodeSummary loan={loan} /> 
-            <BarcodeImage loan={loan} transactions={this.props.transactions} />           
-            <BarcodeList transactions={this.props.transactions} loan={loan} /> 
-          </View> 
+            <BarcodeSummary loan={loan} />
+            <BarcodeImage loan={loan} transactions={this.props.transactions} />
+            <BarcodeList transactions={this.props.transactions} loan={loan} />
+          </View>
         </ScrollView>
       </View>
     );
@@ -38,9 +38,9 @@ class Barcode extends Component {
 }
 
 const styles = StyleSheet.create({
-  containerStyle: {         
-    flex: 1, 
-    paddingBottom: 40,         
+  containerStyle: {
+    flex: 1,
+    paddingBottom: 40,
   }
 });
 

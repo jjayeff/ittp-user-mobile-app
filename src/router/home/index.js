@@ -9,17 +9,17 @@ const Home = () => {
   return (
     <View style={homeStyle}>
       <HomeComponent />
-      <Bottom selectedTab={HOME} />      
+      <Bottom selectedTab={HOME} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   homeStyle: {
-    backgroundColor: '#e6eaed',          
+    backgroundColor: '#e6eaed',
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between',    
+    justifyContent: 'space-between',
   },
 });
 

@@ -10,7 +10,7 @@ class Me extends Component {
       <View style={meStyle}>
         <ScrollView>
           <View style={{ height: 200 }}>
-            <MeSummary /> 
+            <MeSummary loans={this.props.loans} />
           </View>
           <MeList />
         </ScrollView>
@@ -20,9 +20,9 @@ class Me extends Component {
 }
 
 const styles = StyleSheet.create({
-  meStyle: {         
+  meStyle: {
     flex: 1,
-    justifyContent: 'space-between',     
+    justifyContent: 'space-between',
   }
 });
 

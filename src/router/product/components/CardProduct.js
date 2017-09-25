@@ -9,7 +9,7 @@ class CardProduct extends Component {
       <View>
         {
           DataProduct.map((item, i) => (
-            <CardProductSaction key={i} data={item} />             
+            <CardProductSaction key={i} data={item} />
           ))
         }
       </View>

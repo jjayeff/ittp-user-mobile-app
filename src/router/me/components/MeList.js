@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { CardLinkIcon } from '../../../components/common';
+import {
+  PRODUCT,
+  CHANNEL_PAYMENT,
+  PLACE,
+  SUBPLACE,
+  CONTACT,
+  QUESTION,
+  ABOUT_ITTP,
+  LOGOUT
+} from '../../../texts';
 
 class MeList extends Component {
   onPressContact() {
@@ -22,44 +32,44 @@ class MeList extends Component {
   render() {
     const list1 = [
       {
-        title: 'ประเภทสัญญา',
+        title: PRODUCT,
         icon: 'account-balance',
         onPress: this.onPressProduct
       },
       {
-        title: 'ช่องทางการจ่ายเงิน',
+        title: CHANNEL_PAYMENT,
         icon: 'payment'
       },
     ];
     const list2 = [
       {
-        title: 'สถานที่ติดต่อ',
+        title: PLACE,
         icon: 'home',
-        onPress: this.onPressPlace        
+        onPress: this.onPressPlace
       },
       {
-        title: 'ตัวแทนร้านค้า',
+        title: SUBPLACE,
         icon: 'record-voice-over',
-        onPress: this.onPressSubPlace        
+        onPress: this.onPressSubPlace
       },
       {
-        title: 'ช่องทางติดต่อ',
+        title: CONTACT,
         icon: 'message',
         onPress: this.onPressContact
       },
     ];
     const list3 = [
       {
-        title: 'คำถามที่พบบ่อยๆ',
+        title: QUESTION,
         icon: '?',
         onPress: this.onPressQuestion
       },
       {
-        title: 'เกี่ยวกับบริษัทไอทีทีพี',
+        title: ABOUT_ITTP,
         icon: 'school'
       },
       {
-        title: 'ออกจากระบบ',
+        title: LOGOUT,
         icon: 'undo'
       },
     ];
@@ -77,7 +87,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#e6eaed',
     width: '100%',
-    paddingBottom: 25,            
+    paddingBottom: 25,
   },
 });
 

@@ -8,12 +8,12 @@ import { normalize } from '../../utils/fontResponsive';
 const Button = ({ onPress, children }) => {
   const { buttonStyle, textStyle } = styles;
   return (
-  <TouchableOpacity 
-    onPress={onPress}
-    style={buttonStyle}
-  >
-    <Text style={textStyle}> {children} </Text>
-  </TouchableOpacity>
+    <TouchableOpacity
+      onPress={onPress}
+      style={buttonStyle}
+    >
+      <Text style={textStyle}> {children} </Text>
+    </TouchableOpacity>
   );
 };
 

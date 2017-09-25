@@ -10,14 +10,14 @@ const Loans = () => {
     <View style={loanStyle}>
       <Header headerText={LOAN} />
       <Loan />
-      <Bottom selectedTab={LOAN} />      
+      <Bottom selectedTab={LOAN} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   loanStyle: {
-    backgroundColor: '#FFFFFF',          
+    backgroundColor: '#FFFFFF',
     flex: 1,
     flexDirection: 'column',
   },

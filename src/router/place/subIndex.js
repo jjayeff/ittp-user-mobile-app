@@ -7,7 +7,7 @@ import SubPlaceComponent from './components/SubPlace';
 
 class SubPlace extends Component {
   onPressBack() {
-    Actions.me();    
+    Actions.me();
   }
   render() {
     const { containerStyle } = styles;

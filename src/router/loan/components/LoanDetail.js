@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Image, TouchableWithoutFeedback } from 'react-native';
 import Modal from 'react-native-modal';
 import { ModalComponent } from '../../../components/common';
-import { MIN_DUE, DUE_DATE, BATH } from '../../../texts';
+import { MIN_DUE, DUE_DATE, BATH, CLICK_DETAIL } from '../../../texts';
 import { DateFormat, Money } from '../../../utils/base';
 import ModalLoanDetail from './ModalLoanDetail';
 import { normalize } from '../../../utils/fontResponsive';
@@ -14,105 +14,105 @@ class LoanDetail extends Component {
   showModal = () => this.setState({ isModalVisible: true });
   hideModal = () => this.setState({ isModalVisible: false });
   render() {
-    const { 
-      loanDetailContainerStyle, 
+    const {
+      loanDetailContainerStyle,
       circleStyle,
-      innerCircle, 
+      innerCircle,
       outerCircle,
-      inCircleStyle, 
-      textHeadStyle, 
+      inCircleStyle,
+      textHeadStyle,
       textStyle,
       textDetail,
       pageStyle
     } = styles;
-    const { due_date, min_due } = this.props.loan;    
+    const { due_date, min_due } = this.props.loan;
     const { index, num } = this.props;
     return (
-        <View style={loanDetailContainerStyle}>
-          <View style={circleStyle}>
-            <View style={outerCircle}>          
-              <View style={innerCircle}>
-                <TouchableWithoutFeedback onPress={this.showModal}>
-                  <View style={inCircleStyle}>
-                    <Text style={pageStyle}>{index + 1}/{num}</Text>
-                    <Image
+      <View style={loanDetailContainerStyle}>
+        <View style={circleStyle}>
+          <View style={outerCircle}>
+            <View style={innerCircle}>
+              <TouchableWithoutFeedback onPress={this.showModal}>
+                <View style={inCircleStyle}>
+                  <Text style={pageStyle}>{index + 1}/{num}</Text>
+                  <Image
                     source={require('../../../../store/image/ITTP.jpg')}
                     style={{ width: 90, height: 30 }}
-                    />
-                    <Text style={textStyle}>
-                      {(MIN_DUE)}
-                    </Text>
-                    <Text style={textHeadStyle}>
-                      {Money(min_due)} {BATH}
-                    </Text>
-                    <Text style={textStyle}>
-                      {DUE_DATE}
-                    </Text>
-                    <Text style={textHeadStyle}>
-                      {DateFormat(due_date)}
-                    </Text>
-                    <Text style={textDetail}>
-                      ดูรายละเอียด
-                    </Text>
-                  </View>
-                </TouchableWithoutFeedback>            
-              </View>
+                  />
+                  <Text style={textStyle}>
+                    {(MIN_DUE)}
+                  </Text>
+                  <Text style={textHeadStyle}>
+                    {Money(min_due)} {BATH}
+                  </Text>
+                  <Text style={textStyle}>
+                    {DUE_DATE}
+                  </Text>
+                  <Text style={textHeadStyle}>
+                    {DateFormat(due_date)}
+                  </Text>
+                  <Text style={textDetail}>
+                    {CLICK_DETAIL}
+                  </Text>
+                </View>
+              </TouchableWithoutFeedback>
             </View>
           </View>
-          <Modal isVisible={this.state.isModalVisible} >
-            <View style={{ flex: 1, height: 100 }}>
-              <ModalComponent onPress={this.hideModal} Modal={() => <ModalLoanDetail loan={this.props.loan} />} />
-            </View>
-          </Modal>
         </View>
+        <Modal isVisible={this.state.isModalVisible} >
+          <View style={{ flex: 1, height: 100 }}>
+            <ModalComponent onPress={this.hideModal} Modal={() => <ModalLoanDetail loan={this.props.loan} />} />
+          </View>
+        </Modal>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  loanDetailContainerStyle: {       
+  loanDetailContainerStyle: {
     flex: 1,
-    flexDirection: 'row',           
+    flexDirection: 'row',
     paddingTop: 15,
     paddingBottom: 15,
     paddingRight: 15,
-    paddingLeft: 15,       
+    paddingLeft: 15,
   },
-  circleStyle: {  
-    flex: 1,           
-    alignItems: 'center',       
+  circleStyle: {
+    flex: 1,
+    alignItems: 'center',
   },
-  inCircleStyle: {    
-    flex: 1,    
-    alignItems: 'center',    
-    justifyContent: 'center',      
-    flexDirection: 'column',    
+  inCircleStyle: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
   textStyle: {
     fontSize: normalize(17),
     fontFamily: 'Cloud-Light',
     alignItems: 'center',
-    paddingTop: 10,     
-    color: 'steelblue',            
+    paddingTop: 10,
+    color: 'steelblue',
   },
   pageStyle: {
     fontSize: normalize(18),
-    fontFamily: 'Cloud-Light',    
+    fontFamily: 'Cloud-Light',
     alignItems: 'center',
-    paddingBottom: 5,     
-    color: 'steelblue',            
+    paddingBottom: 5,
+    color: 'steelblue',
   },
   textHeadStyle: {
-    fontSize: normalize(19),       
-    fontFamily: 'Cloud-Light',    
-    alignItems: 'center',    
-    color: '#153d8a',        
+    fontSize: normalize(19),
+    fontFamily: 'Cloud-Light',
+    alignItems: 'center',
+    color: '#153d8a',
   },
   textDetail: {
-    fontSize: normalize(16),       
-    fontFamily: 'Cloud-Light',    
-    alignItems: 'center',    
-    color: 'red',        
+    fontSize: normalize(16),
+    fontFamily: 'Cloud-Light',
+    alignItems: 'center',
+    color: 'red',
   },
   outerCircle: {
     borderRadius: 140,

@@ -6,7 +6,7 @@ import { CHANNEL } from '../../texts';
 
 class Channel extends Component {
   onPressBack() {
-    Actions.me();    
+    Actions.me();
   }
   render() {
     const { containerStyle } = styles;

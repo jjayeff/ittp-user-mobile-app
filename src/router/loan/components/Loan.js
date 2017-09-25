@@ -9,11 +9,11 @@ import { Spinner } from '../../../components/common';
 
 class Loan extends Component {
   renderDetail() {
-    const { loanStyle } = styles;   
-    return this.props.loans.loanDb.map((loan, index) => 
+    const { loanStyle } = styles;
+    return this.props.loans.loanDb.map((loan, index) =>
       <ScrollView key={loan.loan_id}>
         <View style={loanStyle}>
-          <LoanSummary loan={loan} />      
+          <LoanSummary loan={loan} />
           <LoanDetail loan={loan} num={this.props.loans.loanDb.length} index={index} />
           <LoanRefresh fetchLoansCID={this.props.fetchLoansCID} />
           <LoanButton loan={loan} />
@@ -38,12 +38,12 @@ class Loan extends Component {
 }
 
 const styles = StyleSheet.create({
-  loanStyle: {         
+  loanStyle: {
     flex: 1,
-    flexDirection: 'column',   
-    justifyContent: 'space-between',   
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     width: '100%',
-    paddingBottom: 40,    
+    paddingBottom: 40,
   }
 });
 

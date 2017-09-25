@@ -7,7 +7,7 @@ import ContactComponent from './components/Contact';
 
 class Contact extends Component {
   onPressBack() {
-    Actions.me();    
+    Actions.me();
   }
   render() {
     const { containerStyle } = styles;

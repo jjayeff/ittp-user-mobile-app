@@ -10,26 +10,26 @@ const LoanSummary = (props) => {
       <Text style={textStyle}>{firstname} {lastname}</Text>
       <View style={detailTypeLoanStyle}>
         <Text style={textStyle}>{loan_id}</Text>
-        <Text style={textColorStyle}>{product_name}</Text>          
+        <Text style={textColorStyle}>{product_name}</Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  loanSummaryContainerStyle: {       
+  loanSummaryContainerStyle: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'center',    
-    justifyContent: 'space-between',            
+    alignItems: 'center',
+    justifyContent: 'space-between',
     paddingTop: 15,
     paddingRight: 15,
-    paddingLeft: 15,  
+    paddingLeft: 15,
   },
-  detailTypeLoanStyle: {       
+  detailTypeLoanStyle: {
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'flex-end',           
+    alignItems: 'flex-end',
   },
   textStyle: {
     fontSize: normalize(18),
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
   },
   textColorStyle: {
     fontSize: normalize(14),
-    backgroundColor: '#153d8a',    
-    color: '#ffffff'          
+    backgroundColor: '#153d8a',
+    color: '#ffffff'
   }
 });
 

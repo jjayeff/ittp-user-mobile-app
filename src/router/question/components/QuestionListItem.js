@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { 
-  Text, 
-  TouchableWithoutFeedback, 
+import {
+  Text,
+  TouchableWithoutFeedback,
   View,
   LayoutAnimation
 } from 'react-native';
@@ -18,13 +18,13 @@ class QuestionListItem extends Component {
     if (library.id === selectionQuestionId) {
       return (
         <CardSection>
-          <View style={{ padding: 10 }}>    
+          <View style={{ padding: 10 }}>
             <Text style={{ fontFamily: 'Cloud-Light' }}>
               {library.description}
             </Text>
           </View>
         </CardSection>
-        
+
       );
     }
   }

@@ -5,7 +5,7 @@ import { fetchLoansCID } from '../../../reduxModules/loan';
 const mapStateToProps = (state) => {
   return ({
     loans: state.loan,
-    transactions: state.transactions90,    
+    transactions: state.transactions90,
   });
 };
 

@@ -86,17 +86,17 @@ class BarcodeList extends Component {
   render() {
     return (
       <View showsButtons loop={false} style={{ width: '100%' }} >
-          {this.renderComponent()}
+        {this.renderComponent()}
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  textStyle: { 
-    color: '#989898', 
-    fontFamily: 'Cloud-Bold', 
-    fontSize: normalize(13) 
+  textStyle: {
+    color: '#989898',
+    fontFamily: 'Cloud-Bold',
+    fontSize: normalize(13)
   }
 });
 

@@ -10,14 +10,14 @@ const Home = () => {
     <View style={meStyle}>
       <Header headerText={ME} />
       <Me />
-      <Bottom selectedTab={ME} />      
+      <Bottom selectedTab={ME} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   meStyle: {
-    backgroundColor: '#e6eaed',          
+    backgroundColor: '#e6eaed',
     flex: 1,
     flexDirection: 'column',
   },

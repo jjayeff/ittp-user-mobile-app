@@ -6,14 +6,14 @@ import TransactionList from './TransactionList';
 
 class Transaction extends Component {
   renderDetail() {
-    const { loanStyle } = styles;   
-    return this.props.loans.map(loan => 
-        <View style={loanStyle} key={loan.loan_id}>
-          <ScrollView>
-            <TransactionSummary loan={loan} />        
-            <TransactionList transactions={this.props.transactions} loan={loan} />  
-          </ScrollView>
-        </View>
+    const { loanStyle } = styles;
+    return this.props.loans.map(loan =>
+      <View style={loanStyle} key={loan.loan_id}>
+        <ScrollView>
+          <TransactionSummary loan={loan} />
+          <TransactionList transactions={this.props.transactions} loan={loan} />
+        </ScrollView>
+      </View>
     );
   }
   render() {
@@ -26,10 +26,10 @@ class Transaction extends Component {
 }
 
 const styles = StyleSheet.create({
-  loanStyle: {         
+  loanStyle: {
     flex: 1,
-    flexDirection: 'column',   
-    paddingBottom: 40,     
+    flexDirection: 'column',
+    paddingBottom: 40,
   },
 });
 

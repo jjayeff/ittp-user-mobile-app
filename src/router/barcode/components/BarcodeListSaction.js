@@ -49,18 +49,18 @@ class TransactionListSaction extends Component {
           onPress={this.showModal}
           fontFamily='Cloud-Light'
         />
-    </View>
+      </View>
     );
   }
-} 
+}
 
 const styles = StyleSheet.create({
-  textStyle: { 
-    paddingLeft: 4, 
-    paddingTop: 4, 
-    color: '#989898', 
-    fontFamily: 'Cloud-Bold', 
-    fontSize: normalize(13) 
+  textStyle: {
+    paddingLeft: 4,
+    paddingTop: 4,
+    color: '#989898',
+    fontFamily: 'Cloud-Bold',
+    fontSize: normalize(13)
   }
 });
 

@@ -20,7 +20,7 @@ class Bottom extends Component {
     this.onPressLoan = this.onPressLoan.bind(this);
     this.onPressHistory = this.onPressHistory.bind(this);
     this.onPressBarcode = this.onPressBarcode.bind(this);
-    this.onPressMe = this.onPressMe.bind(this);    
+    this.onPressMe = this.onPressMe.bind(this);
   }
   componentDidMount() {
     this.setState({ selectedTab: this.props.selectedTab });
@@ -28,23 +28,23 @@ class Bottom extends Component {
   onPressHome() {
     Actions.home();
   }
-  onPressLoan() {  
+  onPressLoan() {
     Actions.loans();
   }
   onPressHistory() {
     Actions.history();
   }
-  onPressBarcode() {     
+  onPressBarcode() {
     Actions.barcode();
   }
-  onPressMe() {    
+  onPressMe() {
     Actions.me();
   }
   render() {
     const { iconStyle, bottomStyle, textStyle, textSelectedStyle } = styles;
     const { selectedTab } = this.state;
     return (
-      <View style={bottomStyle}>  
+      <View style={bottomStyle}>
         <TouchableOpacity onPress={this.onPressHome}>
           <View style={iconStyle}>
             <Icon
@@ -54,42 +54,42 @@ class Bottom extends Component {
             <Text style={selectedTab === HOME ? textStyle : textSelectedStyle}>{HOME}</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.onPressLoan}>        
-          <View style={iconStyle}>      
-          <Icon
-            name='email'
-            color={selectedTab === LOAN ? '#366dc0' : '#989898'}
-          />
-            <Text style={selectedTab === LOAN ? textStyle : textSelectedStyle}>{LOAN}</Text>        
+        <TouchableOpacity onPress={this.onPressLoan}>
+          <View style={iconStyle}>
+            <Icon
+              name='email'
+              color={selectedTab === LOAN ? '#366dc0' : '#989898'}
+            />
+            <Text style={selectedTab === LOAN ? textStyle : textSelectedStyle}>{LOAN}</Text>
           </View>
-        </TouchableOpacity>  
-        <TouchableOpacity onPress={this.onPressHistory}>                       
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.onPressHistory}>
           <View style={iconStyle}>
             <Icon
               name='format-list-bulleted'
               color={selectedTab === HISTORY ? '#366dc0' : '#989898'}
             />
-            <Text style={selectedTab === HISTORY ? textStyle : textSelectedStyle}>{HISTORY}</Text>        
+            <Text style={selectedTab === HISTORY ? textStyle : textSelectedStyle}>{HISTORY}</Text>
           </View>
-        </TouchableOpacity>  
-        <TouchableOpacity onPress={this.onPressBarcode}>   
-          <View style={iconStyle}> 
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.onPressBarcode}>
+          <View style={iconStyle}>
             <Icon
               name='credit-card'
               color={selectedTab === BARCODE ? '#366dc0' : '#989898'}
             />
-            <Text style={selectedTab === BARCODE ? textStyle : textSelectedStyle}>{BARCODE}</Text>        
+            <Text style={selectedTab === BARCODE ? textStyle : textSelectedStyle}>{BARCODE}</Text>
           </View>
-        </TouchableOpacity>  
-        <TouchableOpacity onPress={this.onPressMe}>   
-          <View style={iconStyle}> 
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.onPressMe}>
+          <View style={iconStyle}>
             <Icon
               name='account-box'
               color={selectedTab === ME ? '#366dc0' : '#989898'}
             />
-            <Text style={selectedTab === ME ? textStyle : textSelectedStyle}>{ME}</Text>        
+            <Text style={selectedTab === ME ? textStyle : textSelectedStyle}>{ME}</Text>
           </View>
-        </TouchableOpacity>  
+        </TouchableOpacity>
       </View>
     );
   }
@@ -97,8 +97,8 @@ class Bottom extends Component {
 
 const styles = StyleSheet.create({
   bottomStyle: {
-    justifyContent: 'space-between',            
-    alignItems: 'center',    
+    justifyContent: 'space-between',
+    alignItems: 'center',
     height: 45,
     paddingRight: 25,
     paddingLeft: 25,
@@ -108,21 +108,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#fff'
   },
-  iconStyle: {        
-    justifyContent: 'center',                
-    alignItems: 'center',    
+  iconStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'column',
   },
-  textStyle: {        
-    fontSize: normalize(14),    
-    fontFamily: 'Cloud-Light',   
-    alignItems: 'center',   
+  textStyle: {
+    fontSize: normalize(14),
+    fontFamily: 'Cloud-Light',
+    alignItems: 'center',
     color: '#366dc0',
   },
-  textSelectedStyle: {        
-    fontSize: normalize(14),    
-    fontFamily: 'Cloud-Light',   
-    alignItems: 'center',   
+  textSelectedStyle: {
+    fontSize: normalize(14),
+    fontFamily: 'Cloud-Light',
+    alignItems: 'center',
     color: '#989898',
   },
 });

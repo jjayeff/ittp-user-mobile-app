@@ -15,8 +15,8 @@ class CardLinkIcon extends Component {
     if (icon === 'line') {
       return (
         <View style={{ paddingLeft: 7, paddingRight: 19 }}>
-          <Image 
-            style={{ width: 20, height: 20 }} 
+          <Image
+            style={{ width: 20, height: 20 }}
             source={require('../../../store/image/line-icon.png')}
           />
         </View>
