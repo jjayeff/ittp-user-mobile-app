@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import Barcode from 'react-native-barcode-builder';
 import { Button } from 'react-native-elements';
 import { normalize } from '../../../utils/fontResponsive';
@@ -14,11 +14,14 @@ const BarcodeImage = (props) => {
   return (
     <View style={containerStyle}>
       <View style={{ alignItems: 'center', padding: 20 }}>
-        <Barcode
+        {/* <Barcode
           value="010555414604900 59040030152 050717 2685500"
           format="CODE128"
           width={0.9}
-        />
+        /> */}
+        <Text style={{ fontFamily: 'code128', fontSize: normalize(72) }}>
+          010555414604900
+        </Text>
       </View>
       <Button
         onPress={onPress}
