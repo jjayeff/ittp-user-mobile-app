@@ -12,6 +12,7 @@ import Place from './place';
 import SubPlace from './place/subIndex.js';
 import Question from './question';
 import Channel from './channel';
+import LoanPDF from './loan/components/LoanPDF';
 
 const RouterComponent = () => {
   return (
@@ -30,6 +31,7 @@ const RouterComponent = () => {
         <Scene key="subplace" component={SubPlace} title="SubPlace" hideNavBar />
         <Scene key="question" component={Question} title="Question" hideNavBar />
         <Scene key="channel" component={Channel} title="Channel" hideNavBar />
+        <Scene key="loanPDF" component={LoanPDF} title="LoanPDF" hideNavBar />        
       </Scene>
     </Router>
   );

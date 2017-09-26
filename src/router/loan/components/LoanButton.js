@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Modal from 'react-native-modal';
 import { Button } from 'react-native-elements';
+import { Actions } from 'react-native-router-flux';
 import { ModalComponent } from '../../../components/common';
 import { CAL_CLOSE_CONTRACT, STATEMENT } from '../../../texts';
 import ModalCalCloseContract from './ModalCalCloseContract';
@@ -12,12 +13,16 @@ class LoanButton extends Component {
   }
   showModal = () => this.setState({ isModalVisible: true });
   hideModal = () => this.setState({ isModalVisible: false });
+  onPressStatement() {
+    Actions.loanPDF();
+  }
   render() {
     const { containerStyle } = styles;
     return (
       <View style={containerStyle}>
         <View style={{ flexDirection: 'row' }}>
           <Button
+            onPress={this.onPressStatement}
             icon={{ name: 'library-books' }}
             title={STATEMENT}
             fontFamily='Cloud-Light'
