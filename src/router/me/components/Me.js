@@ -10,7 +10,7 @@ class Me extends Component {
       <View style={meStyle}>
         <ScrollView>
           <View style={{ height: 200 }}>
-            <MeSummary loans={this.props.loans} />
+            <MeSummary loans={this.props.loans.loanDb} />
           </View>
           <MeList />
         </ScrollView>

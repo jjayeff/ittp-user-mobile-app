@@ -1,6 +1,3 @@
-//mock data
-import data from './LoanFetch.json';
-
 export const FETCH_LOANS_CID = 'ittp/FETCH_LOANS_CID';
 export const FETCH_LOANS_CID_SUCCESS = 'ittp/FETCH_LOANS_CID_SUCCESS';
 export const FETCH_LOANS_CID_FAILED = 'ittp/FETCG_LOANS_CID_FAILED';
@@ -11,9 +8,9 @@ export const fetchLoansCID = (citizenId) => ({
 });
 
 const initialState = {
-  loanDb: data,
+  loanDb: [],
   error: '',
-  loading: true,
+  loading: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -21,14 +18,14 @@ const reducer = (state = initialState, action) => {
     case FETCH_LOANS_CID:
       return {
         ...state,
-        // loading: false,
+        loading: false,
       };
     case FETCH_LOANS_CID_SUCCESS: {
       return {
         ...state,
-        // loanDb: action.payload,
-        // error: '',
-        // loading: true,
+        loanDb: action.payload,
+        error: '',
+        loading: true,
       };
     }
     case FETCH_LOANS_CID_FAILED:

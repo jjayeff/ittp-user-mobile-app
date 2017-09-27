@@ -10,7 +10,7 @@ import { Spinner } from '../../../components/common';
 
 class Home extends Component {
   componentDidMount() {
-    // this.props.fetchLoansCID(CID);
+    this.props.fetchLoansCID(CID);
   }
   onPressLoan() {
     Actions.loans();
@@ -63,6 +63,7 @@ class Home extends Component {
     );
   }
   render() {
+    console.log(this.props);
     if (this.props.loans.loading) {
       return (
         <ScrollView>

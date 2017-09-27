@@ -5,12 +5,18 @@ import {
   FETCH_LOANS_CID_SUCCESS,
   FETCG_LOANS_CID_FAILED
 } from '../reduxModules/loan';
-
+import data from '../reduxModules/LoanFetch';
+import { mockup } from '../../config';
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* fetchLoansCID(action) {
   try {
-    const json = yield call(getJSON, `${API_SERVER}/api/Loans/citizen/${action.payload}`);
+    let json;
+    if (mockup) {
+      json = data;
+    } else {
+      json = yield call(getJSON, `${API_SERVER}/api/Loans/citizen/${action.payload}`);
+    }
     yield put({
       type: FETCH_LOANS_CID_SUCCESS,
       payload: json

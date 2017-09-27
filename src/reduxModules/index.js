@@ -1,14 +1,12 @@
 import { combineReducers } from 'redux';
 import loansReducer from './loan';
-import mockLoan from './mockLoan';
 import mockTransaction90 from './mockTransaction90';
-import TransactionReducer from './Transaction';
+import mockTransactionReducer from './Transaction';
 import QuestionReducer from './question';
 
 export default combineReducers({
-  loan: loansReducer,
-  loans: mockLoan,
+  loans: loansReducer,
   transactions90: mockTransaction90,
-  transactions: TransactionReducer,
+  transactions: mockTransactionReducer,
   selectionQuestionId: QuestionReducer
 });
