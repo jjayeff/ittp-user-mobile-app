@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Home from '../components/Home';
 import { fetchLoansCID } from '../../../reduxModules/loan';
-import { fetchTransactionsCID } from '../../../reduxModules/transaction';
+import { fetchTransactionsCID, fetchTransactions90CID } from '../../../reduxModules/transaction';
 
 const mapStateToProps = (state) => {
   return ({
@@ -10,4 +10,6 @@ const mapStateToProps = (state) => {
   });
 };
 
-export default connect(mapStateToProps, { fetchLoansCID, fetchTransactionsCID })(Home);
+export default connect(mapStateToProps,
+  { fetchLoansCID, fetchTransactionsCID, fetchTransactions90CID }
+)(Home);

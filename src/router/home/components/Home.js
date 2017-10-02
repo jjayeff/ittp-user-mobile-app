@@ -12,6 +12,7 @@ class Home extends Component {
   componentDidMount() {
     this.props.fetchLoansCID(CID);
     this.props.fetchTransactionsCID(CID);
+    this.props.fetchTransactions90CID(CID);
   }
   onPressLoan() {
     Actions.loans();

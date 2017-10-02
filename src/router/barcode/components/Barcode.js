@@ -9,13 +9,15 @@ import { Spinner } from '../../../components/common';
 class Barcode extends Component {
   renderDetail() {
     const { containerStyle } = styles;
-    return this.props.loans.loanDb.map((loan) =>
+    const { loans, transactions } = this.props;
+    console.log(transactions);
+    return loans.loanDb.map((loan, index) =>
       <View style={containerStyle} key={loan.loan_id}>
         <ScrollView>
           <View style={{ paddingBottom: 40 }}>
             <BarcodeSummary loan={loan} />
-            <BarcodeImage loan={loan} transactions={this.props.transactions} />
-            <BarcodeList transactions={this.props.transactions} loan={loan} />
+            <BarcodeImage />
+            <BarcodeList transactions={transactions.transaction90Db[index]} loan={loan} />
           </View>
         </ScrollView>
       </View>
