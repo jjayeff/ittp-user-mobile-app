@@ -7,12 +7,11 @@ import TransactionList from './TransactionList';
 class Transaction extends Component {
   renderDetail() {
     const { loanStyle } = styles;
-    console.log(this.props);  
-    return this.props.loans.loanDb.map(loan =>
+    return this.props.loans.loanDb.map((loan, index) =>
       <View style={loanStyle} key={loan.loan_id}>
         <ScrollView>
           <TransactionSummary loan={loan} />
-          <TransactionList transactions={this.props.transactions} loan={loan} />
+          <TransactionList transactions={this.props.transactions.transationDb[index]} loan={loan} />
         </ScrollView>
       </View>
     );

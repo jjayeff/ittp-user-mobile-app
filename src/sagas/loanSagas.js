@@ -15,7 +15,7 @@ function* fetchLoansCID(action) {
     if (mockup) {
       json = data;
     } else {
-      json = yield call(getJSON, `${API_SERVER}/api/Loans/citizen/${action.payload}`);
+      json = yield call(getJSON, `${API_SERVER}/api/Loans/mobile/${action.payload}/loans`);
     }
     yield put({
       type: FETCH_LOANS_CID_SUCCESS,

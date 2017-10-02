@@ -4,4 +4,4 @@
 export const API_SERVER = 'http://localhost:3000';
 export const CID = '4101200009225';
 
-export const mockup = true;
+export const mockup = false;
