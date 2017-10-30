@@ -51,7 +51,7 @@ export default class LoanPDF extends React.Component {
 
     return (
       <View style={{ flex: 1 }}>
-        <Header headerText={STATEMENT} onPress={this.onPressBack} />        
+        <Header headerText={STATEMENT} onPress={this.onPressBack} />
         <View style={styles.container}>
           <Pdf
             ref={(pdf) => { this.pdf = pdf; }}

@@ -40,7 +40,9 @@ class LoanButton extends Component {
         </View>
         <Modal isVisible={this.state.isModalVisible} >
           <View style={{ flex: 1, height: 100 }}>
-            <ModalComponent onPress={this.hideModal} Modal={() => <ModalCalCloseContract loan={this.props.loan} />} />
+            <ModalComponent
+              onPress={this.hideModal} Modal={() => <ModalCalCloseContract loan={this.props.loan} />}
+            />
           </View>
         </Modal>
       </View>
