@@ -1,16 +1,12 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Barcode from 'react-native-barcode-builder';
-import { Button } from 'react-native-elements';
 import { normalize } from '../../../utils/fontResponsive';
-import { ZOOM } from '../../../texts';
 
-const BarcodeImage = (props) => {
+const BarcodeImage = () => {
   const {
     containerStyle,
-    buttonStyle
   } = styles;
-  const { onPress } = props;
   return (
     <View style={containerStyle}>
       <View style={{ alignItems: 'center', padding: 20 }}>
@@ -23,16 +19,6 @@ const BarcodeImage = (props) => {
           010555414604900
         </Text>
       </View>
-      <Button
-        onPress={onPress}
-        icon={{ name: 'search', color: '#000' }}
-        title={ZOOM}
-        color='#000'
-        fontFamily='Cloud-Light'
-        fontSize={normalize(13)}
-        backgroundColor='#fff'
-        buttonStyle={buttonStyle}
-      />
     </View>
   );
 };
