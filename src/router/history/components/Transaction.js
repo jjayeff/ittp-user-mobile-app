@@ -11,7 +11,7 @@ class Transaction extends Component {
     return loans.loanDb.map((loan, index) =>
       <View style={loanStyle} key={loan.loan_id}>
         <ScrollView>
-          <TransactionSummary loan={loan} />
+          <TransactionSummary loan={loan} num={this.props.loans.loanDb.length} index={index} />
           <TransactionList transactions={transactions.transactionDb[index]} loan={loan} />
         </ScrollView>
       </View>

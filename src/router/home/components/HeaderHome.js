@@ -23,11 +23,9 @@ class HeaderHome extends Component {
       <List>
         <ListItem
           onPress={onPress}
-          roundAvatar
           title={HELLO}
           titleStyle={{ fontSize: normalize(20) }}
           subtitle={this.renderComponent()}
-          avatar={require('../../../../store/image/test.jpeg')}
           fontFamily='Cloud-Light'
           chevronColor='#366dc0'
         />

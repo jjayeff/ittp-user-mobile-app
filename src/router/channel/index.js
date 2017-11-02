@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { Header } from '../../components/common';
 import { CHANNEL } from '../../texts';
+import ChannelComponent from './components/Channel';
 
 class Channel extends Component {
   onPressBack() {
@@ -13,6 +14,7 @@ class Channel extends Component {
     return (
       <View style={containerStyle}>
         <Header headerText={CHANNEL} onPress={this.onPressBack} />
+        <ChannelComponent />
       </View>
     );
   }

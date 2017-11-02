@@ -30,8 +30,8 @@ const RouterComponent = () => {
         <Scene key="place" component={Place} title="Place" hideNavBar />
         <Scene key="subplace" component={SubPlace} title="SubPlace" hideNavBar />
         <Scene key="question" component={Question} title="Question" hideNavBar />
-        <Scene key="channel" component={Channel} title="Channel" hideNavBar />
-        <Scene key="loanPDF" component={LoanPDF} title="LoanPDF" hideNavBar />        
+        {<Scene key="channel" component={Channel} title="Channel" hideNavBar />}
+        <Scene key="loanPDF" component={LoanPDF} title="LoanPDF" hideNavBar />
       </Scene>
     </Router>
   );

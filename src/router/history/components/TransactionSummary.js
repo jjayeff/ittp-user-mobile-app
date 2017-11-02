@@ -14,15 +14,21 @@ const TransactionSummary = (props) => {
     textsmallStyle
   } = styles;
   const { firstname, lastname, loan_id, product_name, cf_principal } = props.loan;
+  const { index, num } = props;
   return (
-    <View style={transactionSummaryContainerStyle}>
-      <View style={detailFrontLoanStyle}>
-        <Text style={textStyle}>{firstname} {lastname}</Text>
-        <Text style={textsmallStyle}>{PRINCIPAL} {Money(cf_principal, true)} {BATH}</Text>
+    <View>
+      <View style={{ alignItems: 'center', paddingTop: 10 }}>
+        <Text style={textsmallStyle}>{index + 1}/{num}</Text>
       </View>
-      <View style={detailBackLoanStyle}>
-        <Text style={textStyle}>{loan_id}</Text>
-        <Text style={textColorStyle}>{product_name}</Text>
+      <View style={transactionSummaryContainerStyle}>
+        <View style={detailFrontLoanStyle}>
+          <Text style={textStyle}>{firstname} {lastname}</Text>
+          <Text style={textsmallStyle}>{PRINCIPAL} {Money(cf_principal, true)} {BATH}</Text>
+        </View>
+        <View style={detailBackLoanStyle}>
+          <Text style={textStyle}>{loan_id}</Text>
+          <Text style={textColorStyle}>{product_name}</Text>
+        </View>
       </View>
     </View>
   );
@@ -34,7 +40,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingTop: 15,
     paddingRight: 15,
     paddingLeft: 15,
     backgroundColor: '#fff',
