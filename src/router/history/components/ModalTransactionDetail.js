@@ -14,13 +14,17 @@ import {
   BCGSB,
   CD,
   FIRST_TRANSACTION,
+  LOAN_OPENED,
   BBL_NAME,
   GSB_NAME,
   ITTP_NAME,
   AMOUNT,
   HOW_TO_PAY,
   DATE_TRANSACTION,
-  TRAN_BANK
+  TRAN_BANK,
+  TRAN_ITTP,
+  TRAN_FROM_ITTP,
+  TRAN_OPEN_ITTP
 } from '../../../texts';
 import { normalize } from '../../../utils/fontResponsive';
 
@@ -94,15 +98,97 @@ class ModalTransactionDetail extends Component {
           </View>
         );
       }
+      case LOAN_OPENED: {
+        return (
+          <View style={rowStyle}>
+            <Image
+              style={{ width: 45, height: 45 }}
+              source={require('../../../../store/image/banks/ittp.png')}
+            />
+            <Text style={headerCentertextStyle}>{ITTP_NAME}</Text>
+          </View>
+        );
+      }
       default:
         return <Text>{trc}</Text>;
+    }
+  }
+  renderMoney(trc) {
+    const { HeadertextStyle, rowStyle } = styles;
+    const {
+      cash_in,
+      cash_out,
+    } = this.props.transaction;
+    switch (trc) {
+      case CTBBL: {
+        return (
+          <View style={rowStyle}>
+            <Text style={HeadertextStyle}>{Money(cash_in)}</Text>
+            <Text style={HeadertextStyle}>{TRAN_BANK}</Text>
+          </View>
+        );
+      }
+      case BCBBL: {
+        return (
+          <View style={rowStyle}>
+            <Text style={HeadertextStyle}>{Money(cash_in)}</Text>
+            <Text style={HeadertextStyle}>{TRAN_BANK}</Text>
+          </View>
+        );
+      }
+      case CTGSB: {
+        return (
+          <View style={rowStyle}>
+            <Text style={HeadertextStyle}>{Money(cash_in)}</Text>
+            <Text style={HeadertextStyle}>{TRAN_BANK}</Text>
+          </View>
+        );
+      }
+      case BCGSB: {
+        return (
+          <View style={rowStyle}>
+            <Text style={HeadertextStyle}>{Money(cash_in)}</Text>
+            <Text style={HeadertextStyle}>{TRAN_BANK}</Text>
+          </View>
+        );
+      }
+      case CD: {
+        return (
+          <View style={rowStyle}>
+            <Text style={HeadertextStyle}>{Money(cash_in)}</Text>
+            <Text style={HeadertextStyle}>{TRAN_ITTP}</Text>
+          </View>
+        );
+      }
+      case FIRST_TRANSACTION: {
+        return (
+          <View style={rowStyle}>
+            <Text style={HeadertextStyle}>{Money(cash_out)}</Text>
+            <Text style={HeadertextStyle}>{TRAN_FROM_ITTP}</Text>
+          </View>
+        );
+      }
+      case LOAN_OPENED: {
+        return (
+          <View style={rowStyle}>
+            <Text style={HeadertextStyle}>{Money(cash_out)}</Text>
+            <Text style={HeadertextStyle}>{TRAN_OPEN_ITTP}</Text>
+          </View>
+        );
+      }
+      default:
+        return (
+          <View style={rowStyle}>
+            <Text style={HeadertextStyle}>{Money(cash_in)}</Text>
+            <Text style={HeadertextStyle}>{TRAN_BANK}</Text>
+          </View>
+        );
     }
   }
   render() {
     const { containerStyle, HeadertextStyle, textStyle, rowStyle } = styles;
     const {
       trans_date,
-      cash_in,
       trc
     } = this.props.transaction;
     return (
@@ -117,10 +203,7 @@ class ModalTransactionDetail extends Component {
                 <Text style={textStyle}>{AMOUNT}</Text>
                 <Text style={textStyle}>{HOW_TO_PAY}</Text>
               </View>
-              <View style={rowStyle}>
-                <Text style={HeadertextStyle}>{Money(cash_in)}</Text>
-                <Text style={HeadertextStyle}>{TRAN_BANK}</Text>
-              </View>
+              {this.renderMoney(trc)}
             </TextModal>
             <TextModal>
               <View style={rowStyle}>

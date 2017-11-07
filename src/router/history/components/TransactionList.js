@@ -9,6 +9,7 @@ import {
   BCGSB,
   CD,
   FIRST_TRANSACTION,
+  LOAN_OPENED,
   BBL_NAME,
   GSB_NAME,
   ITTP_NAME,
@@ -40,6 +41,10 @@ class TransactionList extends Component {
         return transactionDetail;
       }
       case FIRST_TRANSACTION: {
+        const transactionDetail = { name: ITTP_NAME, icon: 'ITTP' };
+        return transactionDetail;
+      }
+      case LOAN_OPENED: {
         const transactionDetail = { name: ITTP_NAME, icon: 'ITTP' };
         return transactionDetail;
       }

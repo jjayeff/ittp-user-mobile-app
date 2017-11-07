@@ -26,9 +26,12 @@ export const DATE_CLOSE_CONTRACT = 'วันที่ต้องการป�
 export const DATE_OPEN_CONTRACT = 'วันที่เปิดสัญญา';
 export const TYPE_LOAN = 'ประเภทสินเชื่อ';
 export const AMOUNT = 'จำนวนเงิน';
-export const HOW_TO_PAY = 'วิธีการชำระ';
+export const HOW_TO_PAY = 'รายละเอียด';
 export const DATE_TRANSACTION = 'วันเวลาที่ทำรายการ';
-export const TRAN_BANK = 'โอนผ่านบัญชีธนาคาร';
+export const TRAN_BANK = 'จ่ายเงินผ่านบัญชีธนาคาร';
+export const TRAN_ITTP = 'จ่ายเงินผ่านบริษัทไอทีทีพี';
+export const TRAN_FROM_ITTP = 'ได้รับเงินจากบริษัทไอทีทีพี';
+export const TRAN_OPEN_ITTP = 'เปิดบัญชี';
 export const PRINCIPAL = 'เงินต้นคงเหลือ';
 export const HELLO = 'สวัสดี';
 export const YOU = 'คุณ';
@@ -68,6 +71,7 @@ export const BCBBL = 'BCBBL';
 export const BCGSB = 'BCGSB';
 export const CD = 'CD';
 export const FIRST_TRANSACTION = 'FD';
+export const LOAN_OPENED = 'LO';
 
 //bank
 export const BBL_NAME = 'บัญชีธนาคารกรุงเทพ';
