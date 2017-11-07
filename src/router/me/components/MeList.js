@@ -33,11 +33,15 @@ class MeList extends Component {
   onPressChannel() {
     Actions.channel();
   }
+  onPressAddress() {
+    Actions.address();
+  }
   render() {
     const list1 = [
       {
         title: ADDRESS,
         icon: 'location-on',
+        onPress: this.onPressAddress
       },
       {
         title: PRODUCT,
