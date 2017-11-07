@@ -8,14 +8,19 @@ import { CAL_CLOSE_CONTRACT, STATEMENT } from '../../../texts';
 import ModalCalCloseContract from './ModalCalCloseContract';
 
 class LoanButton extends Component {
-  state = {
-    isModalVisible: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalVisible: false,
+      loan_id: this.props.loan.loan_id
+    };
+    this.onPressStatement = this.onPressStatement.bind(this);
+  }
+  onPressStatement() {
+    Actions.loanPDF(this.state.loan_id);
   }
   showModal = () => this.setState({ isModalVisible: true });
   hideModal = () => this.setState({ isModalVisible: false });
-  onPressStatement() {
-    Actions.loanPDF();
-  }
   render() {
     const { containerStyle } = styles;
     return (

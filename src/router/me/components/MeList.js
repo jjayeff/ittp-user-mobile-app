@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { CardLinkIcon } from '../../../components/common';
 import {
+  ADDRESS,
   PRODUCT,
   CHANNEL_PAYMENT,
   PLACE,
@@ -34,6 +35,10 @@ class MeList extends Component {
   }
   render() {
     const list1 = [
+      {
+        title: ADDRESS,
+        icon: 'location-on',
+      },
       {
         title: PRODUCT,
         icon: 'account-balance',

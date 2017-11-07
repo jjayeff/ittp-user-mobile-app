@@ -28,8 +28,6 @@ class Channel extends Component {
     doAnimateZoomReset: false,
     maximumZoomScale: 2,
     minimumZoomScale: 1,
-    zoomHeight: 10,
-    zoomWidth: 10,
   }
   setZoomRef = node => {
     if (node) {
@@ -47,7 +45,6 @@ class Channel extends Component {
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           ref={this.setZoomRef} //helps us get a reference to this ScrollView instance
-          style={{ overflow: 'hidden' }}
         >
           <View style={{ paddingLeft: 15, paddingRight: 15, paddingTop: 15 }}>
             <View style={{ paddingBottom: 10, alignItems: 'center' }}>

@@ -49,6 +49,7 @@ export const HISTORY = 'รายการ';
 export const BARCODE = 'บาร์โค้ด';
 export const ME = 'ฉัน';
 export const PRODUCT = 'ประเภทสินเชื่อ';
+export const ADDRESS = 'ที่อยู่';
 export const CONTACT = 'ช่องทางติดต่อ';
 export const PLACE = 'สถานที่ติดต่อ';
 export const SUBPLACE = 'ตัวแทนร้านค้า';

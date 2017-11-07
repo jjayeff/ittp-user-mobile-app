@@ -43,8 +43,7 @@ export default class LoanPDF extends React.Component {
   }
 
   render() {
-    const source = { uri: `${REPOST_SERVER}/temp-receipt-transaction/?id=5005`, cache: true };
-
+    const source = { uri: `${REPOST_SERVER}/mobile-statement/?loan_id=${this.props.data}`, cache: true };
     return (
       <View style={{ flex: 1 }}>
         <Header headerText={STATEMENT} onPress={this.onPressBack} />

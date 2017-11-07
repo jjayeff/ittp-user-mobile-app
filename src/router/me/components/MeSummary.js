@@ -15,7 +15,7 @@ class MeSummary extends Component {
   }
   render() {
     const { containerStyle, textStyle, textsmallStyle } = styles;
-    const { firstname, lastname } = this.props.loans[0];
+    const { firstname, lastname, citizen_id } = this.props.loans[0];
     return (
       <View style={containerStyle}>
         {this.renderImage()}
@@ -25,7 +25,7 @@ class MeSummary extends Component {
         </View>
         <View style={{ flexDirection: 'row' }}>
           <Icon name='check-box' color='#366dc0' />
-          <Text style={textsmallStyle}> x-xxxx-xxx68-86-4</Text>
+          <Text style={textsmallStyle}>{citizen_id}</Text>
         </View>
       </View>
     );
