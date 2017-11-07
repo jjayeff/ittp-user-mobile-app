@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, TouchableHighlight } from 'react-native';
 import { normalize } from '../../../utils/fontResponsive';
 
 const channel = [
   {
+    id: 1,
     image: require('../../../../store/image/channel1.jpg'),
     title1: 'ฟรี ค่าธรรมเนียม',
     title2: '(เมื่อชำระไม่เกิน 5,000 บาท)'
   },
   {
+    id: 2,
     image: require('../../../../store/image/channel2.png'),
     title1: 'โอนง่ายผ่าน ATM หรือ',
     title2: 'แอพพลิเคชั่นมือถือธนาคาร'
   },
   {
+    id: 3,
     image: require('../../../../store/image/channel3.png'),
     title1: 'ตรวจสอบง่าย สะดวกกว่า',
     title2: '​ไม่ต้องส่งสลิปเงินโอนมายืนยัน'
@@ -21,11 +24,31 @@ const channel = [
 ];
 
 class Channel extends Component {
+  static defaultProps = {
+    doAnimateZoomReset: false,
+    maximumZoomScale: 2,
+    minimumZoomScale: 1,
+    zoomHeight: 10,
+    zoomWidth: 10,
+  }
+  setZoomRef = node => {
+    if (node) {
+      this.zoomRef = node;
+      this.scrollResponderRef = this.zoomRef.getScrollResponder();
+    }
+  }
   render() {
     const { containerStyle } = styles;
     return (
       <View style={containerStyle}>
-        <ScrollView>
+        <ScrollView
+          maximumZoomScale={this.props.maximumZoomScale}
+          minimumZoomScale={this.props.minimumZoomScale}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          ref={this.setZoomRef} //helps us get a reference to this ScrollView instance
+          style={{ overflow: 'hidden' }}
+        >
           <View style={{ paddingLeft: 15, paddingRight: 15, paddingTop: 15 }}>
             <View style={{ paddingBottom: 10, alignItems: 'center' }}>
               <Text style={{ fontSize: normalize(20), fontFamily: 'Cloud-Light' }}>ลูกค้าไอทีทีพีสามารถชำระเงินได้ 2 ช่องทาง</Text>
@@ -55,7 +78,7 @@ class Channel extends Component {
                 {
                   channel.map((u) => {
                     return (
-                      <View style={{ alignItems: 'center' }}>
+                      <View style={{ alignItems: 'center' }} key={u.id}>
                         <Text style={{ marginBottom: 10 }}>{u.title1} {u.title2}</Text>
                       </View>
                     );
@@ -105,8 +128,8 @@ class Channel extends Component {
                   <Text style={{ textDecorationLine: 'underline' }}>หมายเหตุ</Text>
                   <Text>1. วันสิ้นสุดกำหนดรับชำระ ณ รอบใบแจ้งยอด</Text>
                   <Text>2. ยอดชำระขั้นต่ำเดือนนี้</Text>
-                  <Text>3. บาร์โค้ด ยื่นให้ทาง ธนาคารแสกนได้ </Text>       
-                  <Text>(หากไม่ได้รับใบแจ้งยอด หรือ ได้รับล่าช้า กรุณาแจ้งแผนกลูกค้าสัมพันธ์ @ittp หรือโทร 02-153-9580)</Text>                                                                                        
+                  <Text>3. บาร์โค้ด ยื่นให้ทาง ธนาคารแสกนได้ </Text>
+                  <Text>(หากไม่ได้รับใบแจ้งยอด หรือ ได้รับล่าช้า กรุณาแจ้งแผนกลูกค้าสัมพันธ์ @ittp หรือโทร 02-153-9580)</Text>
                 </View>
               </View>
             </View>

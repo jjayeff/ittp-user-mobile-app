@@ -27,7 +27,7 @@ const CardHome = (props) => {
       <View style={rowStyle}>
         <CardIcons title={PLACE} icon='home' iconColor='#366dc0' onPress={place} />
         <CardIcons title={PRODUCT} icon='account-balance' iconColor='#03A9F4' onPress={product} />
-        <CardIcons title={QUESTION} icon='?' iconColor='#ED6351' onPress={question} />
+        <CardIcons title={QUESTION} icon='lightbulb-outline' iconColor='#ED6351' onPress={question} />
       </View>
     </View>
   );

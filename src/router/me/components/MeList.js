@@ -65,7 +65,7 @@ class MeList extends Component {
     const list3 = [
       {
         title: QUESTION,
-        icon: '?',
+        icon: 'lightbulb-outline',
         onPress: this.onPressQuestion
       },
       {
