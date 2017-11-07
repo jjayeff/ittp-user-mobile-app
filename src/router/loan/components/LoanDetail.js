@@ -113,6 +113,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Cloud-Light',
     alignItems: 'center',
     color: 'red',
+    textDecorationLine: 'underline',
+    paddingTop: 10
   },
   outerCircle: {
     borderRadius: 140,

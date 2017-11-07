@@ -1,14 +1,13 @@
 import React from 'react';
 import {
   StyleSheet,
-  TouchableHighlight,
   Dimensions,
   View,
-  Text
 } from 'react-native';
 import Pdf from 'react-native-pdf';
 import { Actions } from 'react-native-router-flux';
 import { Header } from '../../../components/common';
+import { REPOST_SERVER } from '../../../../config';
 import { STATEMENT } from '../../../texts';
 
 export default class LoanPDF extends React.Component {
@@ -44,10 +43,7 @@ export default class LoanPDF extends React.Component {
   }
 
   render() {
-    const source = { uri: 'https://www.irs.gov/pub/irs-pdf/fw2.pdf', cache: true };
-    //let source = {uri:'bundle-assets://test.pdf'};
-    //let source = require('./test.pdf'); //ios only
-    //let source = {uri:"data:application/pdf;base64, ..."}; // this is a dummy
+    const source = { uri: `${REPOST_SERVER}/temp-receipt-transaction/?id=5005`, cache: true };
 
     return (
       <View style={{ flex: 1 }}>
@@ -70,22 +66,6 @@ export default class LoanPDF extends React.Component {
             }}
             style={styles.pdf}
           />
-          <View style={{ flexDirection: 'row' }}>
-            <TouchableHighlight
-              disabled={this.state.page === 1}
-              style={this.state.page === 1 ? styles.btnDisable : styles.btn}
-              onPress={() => this.prePage()}
-            >
-              <Text style={styles.btnText}>{'Previous'}</Text>
-            </TouchableHighlight>
-            <TouchableHighlight
-              disabled={this.state.page === this.state.pageCount}
-              style={this.state.page === this.state.pageCount ? styles.btnDisable : styles.btn}
-              onPress={() => this.nextPage()}
-            >
-              <Text style={styles.btnText}>{'Next'}</Text>
-            </TouchableHighlight>
-          </View>
         </View>
       </View>
     );
