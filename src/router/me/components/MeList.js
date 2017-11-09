@@ -36,6 +36,9 @@ class MeList extends Component {
   onPressAddress() {
     Actions.address();
   }
+  onPressLogOut() {
+    Actions.login();
+  }
   render() {
     const list1 = [
       {
@@ -83,7 +86,8 @@ class MeList extends Component {
       },
       {
         title: LOGOUT,
-        icon: 'undo'
+        icon: 'undo',
+        onPress: this.onPressLogOut
       },
     ];
     return (

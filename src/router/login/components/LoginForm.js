@@ -1,52 +1,87 @@
 import React, { Component } from 'react';
-import { View, Image, TouchableOpacity } from 'react-native';
+import { View, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Fumi } from 'react-native-textinput-effects';
+import { Button, SocialIcon } from 'react-native-elements';
 import { PHONE, ID } from '../../../texts';
 
 class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      citizenId: '',
+      password: '',
+    };
+    this.onChangeCitizenId = this.onChangeCitizenId.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+  }
   onPressLogin() {
     Actions.home();
   }
+  onChangeCitizenId(text) {
+    this.setState({ citizenId: text });
+  }
+  onChangePassword(text) {
+    this.setState({ password: text });
+  }
   render() {
+    console.log(this.state);
     return (
       <View style={{ height: '100%', width: '100%' }}>
-        <TouchableOpacity onPress={this.onPressLogin}>
-          <Image
-            style={{ height: '100%', width: '100%', justifyContent: 'center', }}
-            source={require('../../../../store/image/backgroud-login.png')}
-          >
-            <View style={{ alignSelf: 'center', paddingBottom: 50 }}>
-              <Image
-                style={{ height: 60, width: 180 }}
-                source={require('../../../../store/image/ittp-logo.png')}
-              />
-            </View>
-            <View style={{ paddingBottom: 10 }}>
-              <Fumi
-                label={PHONE}
-                iconClass={FontAwesomeIcon}
-                iconName={'university'}
-                iconColor={'#03A9F4'}
-                iconSize={20}
-                style={{ height: 60, width: '80%', alignSelf: 'center' }}
-                labelStyle={{ fontFamily: 'Cloud-Light' }}
-              />
-            </View>
-            <View style={{ paddingBottom: 10 }}>
-              <Fumi
-                label={ID}
-                iconClass={FontAwesomeIcon}
-                iconName={'university'}
-                iconColor={'#03A9F4'}
-                iconSize={20}
-                style={{ height: 60, width: '80%', alignSelf: 'center' }}
-                labelStyle={{ fontFamily: 'Cloud-Light' }}
-              />
-            </View>
-          </Image>
-        </TouchableOpacity>
+        <Image
+          style={{ height: '100%', width: '100%', justifyContent: 'center', }}
+          source={require('../../../../store/image/backgroud-login.png')}
+        >
+          <View style={{ alignSelf: 'center', paddingBottom: 50 }}>
+            <Image
+              style={{ height: 60, width: 180 }}
+              source={require('../../../../store/image/ittp-logo.png')}
+            />
+          </View>
+          <View style={{ paddingBottom: 10 }}>
+            <Fumi
+              label={ID}
+              iconClass={FontAwesomeIcon}
+              iconName={'user'}
+              iconColor={'#03A9F4'}
+              iconSize={20}
+              style={{ height: 60, width: '80%', alignSelf: 'center' }}
+              labelStyle={{ fontFamily: 'Cloud-Light' }}
+              onChangeText={(text) => { this.onChangeCitizenId(text); }}
+            />
+          </View>
+          <View style={{ paddingBottom: 10 }}>
+            <Fumi
+              label={PHONE}
+              iconClass={FontAwesomeIcon}
+              iconName={'phone'}
+              iconColor={'#03A9F4'}
+              iconSize={20}
+              style={{ height: 60, width: '80%', alignSelf: 'center' }}
+              labelStyle={{ fontFamily: 'Cloud-Light' }}
+              onChangeText={(text) => { this.onChangePassword(text); }}
+            />
+          </View>
+          <View style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 20, paddingBottom: 5 }}>
+            <Button
+              raised
+              onPress={this.onPressLogin}
+              icon={{ name: 'envira', type: 'font-awesome' }}
+              buttonStyle={{ backgroundColor: '#4d9edd', borderRadius: 30 }}
+              title='Login'
+              value={this.state.citizenId}
+            />
+          </View>
+          <View style={{ paddingLeft: 30, paddingRight: 30 }}>
+            <SocialIcon
+              title='Sign In With Facebook'
+              button
+              type='facebook'
+              value={this.state.password}
+            />
+          </View>
+        </Image>
       </View>
     );
   }
