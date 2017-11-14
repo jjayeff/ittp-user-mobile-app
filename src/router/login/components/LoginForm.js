@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Fumi } from 'react-native-textinput-effects';
@@ -10,23 +10,35 @@ class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      citizenId: '',
+      username: '',
       password: '',
     };
     this.onChangeCitizenId = this.onChangeCitizenId.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
+    this.onPressLogin = this.onPressLogin.bind(this);
+  }
+  async saveItem(item, selectedValue) {
+    try {
+      await AsyncStorage.setItem(item, selectedValue);
+      Actions.home();
+    } catch (error) {
+      console.log(`AsyncStorage error: ${error.message}`);
+    }
   }
   onPressLogin() {
-    Actions.home();
+    this.props.submitLogin(this.state);
   }
   onChangeCitizenId(text) {
-    this.setState({ citizenId: text });
+    this.setState({ username: text });
   }
   onChangePassword(text) {
     this.setState({ password: text });
   }
   render() {
-    console.log(this.state);
+    const { accessToken, isLoggedIn } = this.props.auth;
+    if (accessToken && isLoggedIn) {
+      this.saveItem(accessToken, accessToken);
+    }
     return (
       <View style={{ height: '100%', width: '100%' }}>
         <Image

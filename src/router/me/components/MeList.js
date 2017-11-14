@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { CardLinkIcon } from '../../../components/common';
 import {
@@ -36,8 +36,19 @@ class MeList extends Component {
   onPressAddress() {
     Actions.address();
   }
-  onPressLogOut() {
-    Actions.login();
+  async onPressLogOut() {
+    try {
+      Promise.all(
+        AsyncStorage.getAllKeys()
+          .then(ks => ks.map(
+            async k => await AsyncStorage.removeItem(k).then(() => {
+              Actions.login();
+            }))
+          )
+      );
+    } catch (error) {
+      console.log(`AsyncStorage error: ${error.message}`);
+    }
   }
   render() {
     const list1 = [
