@@ -6,7 +6,8 @@ import { fetchTransactionsCID, fetchTransactions90CID } from '../../../reduxModu
 const mapStateToProps = (state) => {
   return ({
     loans: state.loans,
-    transactions: state.transactions
+    transactions: state.transactions,
+    auth: state.auth,    
   });
 };
 

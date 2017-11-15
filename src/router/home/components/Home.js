@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { CID } from '../../../../config';
 import News from './News';
 import HeaderHome from './HeaderHome';
 import LoanHome from './LoanHome';
@@ -10,9 +9,10 @@ import { Spinner } from '../../../components/common';
 
 class Home extends Component {
   componentDidMount() {
-    this.props.fetchLoansCID(CID);
-    this.props.fetchTransactionsCID(CID);
-    this.props.fetchTransactions90CID(CID);
+    const { citizenId } = this.props.auth;    
+    this.props.fetchLoansCID(citizenId);
+    this.props.fetchTransactionsCID(citizenId);
+    this.props.fetchTransactions90CID(citizenId);
   }
   onPressLoan() {
     Actions.loans();

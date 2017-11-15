@@ -73,6 +73,7 @@ class LoginForm extends Component {
               style={{ height: 60, width: '80%', alignSelf: 'center' }}
               labelStyle={{ fontFamily: 'Cloud-Light' }}
               onChangeText={(text) => { this.onChangePassword(text); }}
+              secureTextEntry
             />
           </View>
           <View style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 20, paddingBottom: 5 }}>
