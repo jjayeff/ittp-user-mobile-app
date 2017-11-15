@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Me from '../components/Me';
+import { submitLogout } from '../../../reduxModules/auth';
 
 const mapStateToProps = (state) => {
   return ({
@@ -7,4 +8,4 @@ const mapStateToProps = (state) => {
   });
 };
 
-export default connect(mapStateToProps)(Me);
+export default connect(mapStateToProps, { submitLogout })(Me);

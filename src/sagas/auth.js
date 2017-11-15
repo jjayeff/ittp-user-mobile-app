@@ -4,7 +4,9 @@ import {
   SUBMIT_LOGIN,
   SUBMIT_LOGIN_SUCCESS,
   SUBMIT_LOGIN_FAILED,
-  SUBMIT_LOGOUT
+  SUBMIT_LOGOUT,
+  SUBMIT_LOGOUT_SUCCESS,
+  SUBMIT_LOGOUT_FAILED
 } from '../reduxModules/auth';
 
 export function* submitLogin(action) {
@@ -23,9 +25,15 @@ export function* submitLogin(action) {
 }
 
 export function* submitLogout() {
-  yield put({
-    type: SUBMIT_LOGOUT,
-  });
+  try {
+    yield put({
+      type: SUBMIT_LOGOUT_SUCCESS,
+    });
+  } catch (error) {
+    yield put({
+      type: SUBMIT_LOGOUT_FAILED,
+    });
+  }
 }
 
 function* watchAuthSagas() {

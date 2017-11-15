@@ -2,6 +2,9 @@ export const SUBMIT_LOGIN = 'ittp/SUBMIT_LOGIN';
 export const SUBMIT_LOGIN_SUCCESS = 'ittp/SUBMIT_LOGIN_SUCCESS';
 export const SUBMIT_LOGIN_FAILED = 'ittp/SUBMIT_LOGIN_FAILED';
 export const SUBMIT_LOGOUT = 'ittp/SUBMIT_LOGOUT';
+export const SUBMIT_LOGOUT_SUCCESS = 'ittp/SUBMIT_LOGOUT_SUCCESS';
+export const SUBMIT_LOGOUT_FAILED = 'ittp/SUBMIT_LOGOUT_FAILED ';
+
 
 export const submitLogin = (json) => ({
   type: SUBMIT_LOGIN,
@@ -18,6 +21,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+  console.log(action.type);
   switch (action.type) {
     case SUBMIT_LOGIN:
       return {

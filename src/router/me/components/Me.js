@@ -12,7 +12,7 @@ class Me extends Component {
           <View style={{ height: 200 }}>
             <MeSummary loans={this.props.loans.loanDb} />
           </View>
-          <MeList />
+          <MeList submitLogout={this.props.submitLogout} />
         </ScrollView>
       </View>
     );

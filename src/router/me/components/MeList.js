@@ -37,6 +37,7 @@ class MeList extends Component {
     Actions.address();
   }
   async onPressLogOut() {
+    this.props.submitLogout();
     try {
       Promise.all(
         AsyncStorage.getAllKeys()
@@ -98,7 +99,7 @@ class MeList extends Component {
       {
         title: LOGOUT,
         icon: 'undo',
-        onPress: this.onPressLogOut
+        onPress: this.onPressLogOut.bind(this)
       },
     ];
     return (
