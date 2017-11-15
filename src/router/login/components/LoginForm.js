@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, AsyncStorage } from 'react-native';
+import { View, Image, AsyncStorage, Alert } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Fumi } from 'react-native-textinput-effects';
@@ -35,7 +35,11 @@ class LoginForm extends Component {
     this.setState({ password: text });
   }
   render() {
-    const { accessToken, isLoggedIn } = this.props.auth;
+    const { accessToken, isLoggedIn, errorMessage } = this.props.auth;
+    if (errorMessage) {
+      Alert.alert(errorMessage);
+      this.props.submitLogout();
+    }
     if (accessToken && isLoggedIn) {
       this.saveItem(accessToken, accessToken);
     }

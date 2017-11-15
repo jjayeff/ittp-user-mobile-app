@@ -27,6 +27,7 @@ const initialState = {
   accessToken: undefined,
   isLoggedIn: false,
   citizenId: '',
+  errorMessage: undefined
 };
 
 const reducer = (state = initialState, action) => {
@@ -36,49 +37,56 @@ const reducer = (state = initialState, action) => {
         ...state,
         accessToken: undefined,
         isLoggedIn: false,
-        citizenId: ''
+        citizenId: '',
+        errorMessage: undefined
       };
     case SUBMIT_LOGIN_SUCCESS:
       return {
         ...state,
         accessToken: action.payload.accessToken,
         isLoggedIn: true,
-        citizenId: action.payload.username
+        citizenId: action.payload.username,
+        errorMessage: undefined
       };
     case SUBMIT_LOGIN_FAILED:
       return {
         ...state,
         accessToken: undefined,
         isLoggedIn: false,
-        citizenId: ''
+        citizenId: '',
+        errorMessage: action.payload
       };
     case SUBMIT_LOGOUT:
       return {
         ...state,
         accessToken: undefined,
         isLoggedIn: false,
-        citizenId: ''
+        citizenId: '',
+        errorMessage: undefined
       };
     case HAS_ACCESS_TOKEN:
       return {
         ...state,
         accessToken: undefined,
         isLoggedIn: false,
-        citizenId: ''
+        citizenId: '',
+        errorMessage: undefined
       };
     case HAS_ACCESS_TOKEN_SUCCESS:
       return {
         ...state,
         accessToken: action.payload.accessToken,
         isLoggedIn: true,
-        citizenId: action.payload.username
+        citizenId: action.payload.username,
+        errorMessage: undefined
       };
     case HAS_ACCESS_TOKEN_FAILED:
       return {
         ...state,
         accessToken: undefined,
         isLoggedIn: false,
-        citizenId: ''
+        citizenId: '',
+        errorMessage: action.payload
       };
     default:
       return state;

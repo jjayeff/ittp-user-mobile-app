@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import LoginForm from '../components/LoginForm';
-import { submitLogin } from '../../../reduxModules/auth';
+import { submitLogin, submitLogout } from '../../../reduxModules/auth';
 
 const mapStateToProps = (state) => {
   return ({
@@ -8,4 +8,4 @@ const mapStateToProps = (state) => {
   });
 };
 
-export default connect(mapStateToProps, { submitLogin })(LoginForm);
+export default connect(mapStateToProps, { submitLogin, submitLogout })(LoginForm);

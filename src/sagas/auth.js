@@ -22,7 +22,7 @@ export function* submitLogin(action) {
   } catch (error) {
     yield put({
       type: SUBMIT_LOGIN_FAILED,
-      payload: error,
+      payload: 'เลขบัตรประชาชน หรือ เบอร์มือถือไม่ถูกต้อง',
     });
   }
 }
@@ -37,7 +37,7 @@ export function* hasAccessToken(action) {
   } catch (error) {
     yield put({
       type: HAS_ACCESS_TOKEN_FAILED,
-      payload: error,
+      payload: 'เกิดข้อผิดพลาดของระบบ',
     });
   }
 }
