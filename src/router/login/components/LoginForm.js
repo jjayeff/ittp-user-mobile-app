@@ -80,7 +80,7 @@ class LoginForm extends Component {
               secureTextEntry
             />
           </View>
-          <View style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 20, paddingBottom: 5 }}>
+          <View style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 20, paddingBottom: 5 }} >
             <Button
               raised
               onPress={this.onPressLogin}

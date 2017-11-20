@@ -10,13 +10,12 @@ class Barcode extends Component {
   renderDetail() {
     const { containerStyle } = styles;
     const { loans, transactions } = this.props;
-    console.log(transactions);
     return loans.loanDb.map((loan, index) =>
       <View style={containerStyle} key={loan.loan_id}>
         <ScrollView>
           <View style={{ paddingBottom: 40 }}>
             <BarcodeSummary loan={loan} />
-            <BarcodeImage />
+            <BarcodeImage loanId={loan.loan_id} />
             <BarcodeList transactions={transactions.transaction90Db[index]} loan={loan} />
           </View>
         </ScrollView>

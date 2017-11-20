@@ -1,16 +1,36 @@
 import React, { Component } from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { Icon } from 'react-native-elements';
+import ImagePicker from 'react-native-image-picker';
 import { normalize } from '../../../utils/fontResponsive';
 import { YOU } from '../../../texts';
 
 class MeSummary extends Component {
+  onPressImage() {
+    ImagePicker.showImagePicker((response) => {
+      console.log('Response = ', response);
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+      } else {
+        const source = { uri: response.uri };
+        console.log(source);
+        // You can also display the image using data:
+        // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+      }
+    });
+  }
   renderImage() {
     return (
-      <Image
-        style={{ width: 80, height: 80, borderRadius: 40, borderColor: 'black' }}
-        source={require('../../../../store/image/test.jpeg')}
-      />
+      <TouchableWithoutFeedback onPress={this.onPressImage}>
+        <Image
+          style={{ width: 80, height: 80, borderRadius: 40, borderColor: 'black' }}
+          source={require('../../../../store/image/test.jpeg')}
+        />
+      </TouchableWithoutFeedback>
     );
   }
   render() {

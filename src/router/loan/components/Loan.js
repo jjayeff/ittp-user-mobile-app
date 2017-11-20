@@ -8,6 +8,13 @@ import LoanButton from './LoanButton';
 import { Spinner } from '../../../components/common';
 
 class Loan extends Component {
+  constructor(props) {
+    super(props);
+    this.onPressRefresh = this.onPressRefresh.bind(this);
+  }
+  onPressRefresh() {
+    this.props.fetchLoansCID(this.props.auth.citizenId);
+  }
   renderDetail() {
     const { loanStyle } = styles;
     return this.props.loans.loanDb.map((loan, index) =>
@@ -15,7 +22,7 @@ class Loan extends Component {
         <View style={loanStyle}>
           <LoanSummary loan={loan} />
           <LoanDetail loan={loan} num={this.props.loans.loanDb.length} index={index} />
-          <LoanRefresh fetchLoansCID={this.props.fetchLoansCID} />
+          <LoanRefresh onPress={this.onPressRefresh} />
           <LoanButton loan={loan} />
         </View>
       </ScrollView>

@@ -3,10 +3,12 @@ import { View, StyleSheet, Text } from 'react-native';
 import Barcode from 'react-native-barcode-builder';
 import { normalize } from '../../../utils/fontResponsive';
 
-const BarcodeImage = () => {
+const BarcodeImage = (props) => {
   const {
     containerStyle,
   } = styles;
+  const { loanId } = props;
+  const barcode = `010555414604900 ${loanId} 2685500`;
   return (
     <View style={containerStyle}>
       <View style={{ alignItems: 'center', padding: 20 }}>
@@ -17,6 +19,9 @@ const BarcodeImage = () => {
         /> */}
         <Text style={{ fontFamily: 'code128', fontSize: normalize(72) }}>
           010555414604900
+        </Text>
+        <Text style={{ fontFamily: 'Cloud-Light', fontSize: normalize(14), paddingTop: 5 }}>
+          {barcode}
         </Text>
       </View>
     </View>
