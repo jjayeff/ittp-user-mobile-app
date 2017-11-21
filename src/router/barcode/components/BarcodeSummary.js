@@ -21,9 +21,13 @@ const BarcodeSummary = (props) => {
     textsmallStyle
   } = styles;
   const { loan_id, due_date, min_due, cf_principal, product_name } = props.loan;
+  const { index, num } = props;  
   return (
-    <View style={{ height: 125 }}>
+    <View style={{ height: 145 }}>
       <View style={containerStyle}>
+        <View style={{ alignItems: 'center' }}>
+          <Text style={textsmallStyle}>{index + 1}/{num}</Text>
+        </View>
         <View style={rowStyle}>
           <Text style={textStyle}>{loan_id}</Text>
           <View style={flexEndStyle}>

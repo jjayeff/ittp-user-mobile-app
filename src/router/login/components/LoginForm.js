@@ -5,6 +5,7 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Fumi } from 'react-native-textinput-effects';
 import { Button, SocialIcon } from 'react-native-elements';
 import { PHONE, ID } from '../../../texts';
+import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class LoginForm extends Component {
     this.onChangeCitizenId = this.onChangeCitizenId.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
     this.onPressLogin = this.onPressLogin.bind(this);
+    this.fbAuth = this.fbAuth.bind(this);    
   }
   async saveItem(item, selectedValue) {
     try {
@@ -34,6 +36,52 @@ class LoginForm extends Component {
   onChangePassword(text) {
     this.setState({ password: text });
   }
+  fbNew(accessToken) {
+    Actions.citizenIdForm(accessToken);
+  }
+  fbAuth() {
+    LoginManager.logInWithReadPermissions(['public_profile']).then((result) => {
+      if (result.isCancelled) {
+        console.log('Login Cancelled');
+      } else {
+        console.log(`Login Success permission granted:${result.grantedPermissions}`);
+        AccessToken.getCurrentAccessToken().then(
+          (data) => {
+            const accessToken = data.accessToken;
+            const responseInfoCallback = (error, res) => {
+              if (error) {
+                console.log(error);
+              } else {
+                const json = {
+                  accessToken,
+                  id: res.id
+                };
+                this.props.submitLoginFacebook(json);
+              }
+            };
+
+            const infoRequest = new GraphRequest(
+              '/me',
+              {
+                accessToken,
+                parameters: {
+                  fields: {
+                    string: 'email,name,first_name,middle_name,last_name'
+                  }
+                }
+              },
+              responseInfoCallback
+            );
+
+            // Start the graph request.
+            new GraphRequestManager().addRequest(infoRequest).start();
+          }
+        );
+      }
+    }, (error) => {
+      console.log('some error occurred!!');
+    });
+  }
   render() {
     const { accessToken, isLoggedIn, errorMessage } = this.props.auth;
     if (errorMessage) {
@@ -42,6 +90,9 @@ class LoginForm extends Component {
     }
     if (accessToken && isLoggedIn) {
       this.saveItem(accessToken, accessToken);
+    }
+    if (accessToken && !isLoggedIn) {
+      this.fbNew(accessToken);
     }
     return (
       <View style={{ height: '100%', width: '100%' }}>
@@ -96,6 +147,7 @@ class LoginForm extends Component {
               button
               type='facebook'
               value={this.state.password}
+              onPress={this.fbAuth}
             />
           </View>
         </Image>

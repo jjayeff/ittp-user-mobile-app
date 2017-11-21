@@ -10,6 +10,12 @@ import {
   HAS_ACCESS_TOKEN,
   HAS_ACCESS_TOKEN_SUCCESS,
   HAS_ACCESS_TOKEN_FAILED,
+  SUBMIT_LOGIN_FACEBOOK,
+  SUBMIT_LOGIN_FACEBOOK_SUCCESS,
+  SUBMIT_LOGIN_FACEBOOK_FAILED,
+  SUBMIT_CITIZENID_FACEBOOK,
+  SUBMIT_CITIZENID_FACEBOOK_SUCCESS,
+  SUBMIT_CITIZENID_FACEBOOK_FAILED,
 } from '../reduxModules/auth';
 
 export function* submitLogin(action) {
@@ -27,8 +33,42 @@ export function* submitLogin(action) {
   }
 }
 
+export function* submitLoginFacebook(action) {
+  try {
+    const json = yield call(postJSON, `${API_SERVER}/api/Auth/${action.payload.accessToken}/fb`, action.payload);
+    yield put({
+      type: SUBMIT_LOGIN_FACEBOOK_SUCCESS,
+      payload: json,
+    });
+  } catch (error) {
+    yield put({
+      type: SUBMIT_LOGIN_FACEBOOK_FAILED,
+      payload: action.payload,
+    });
+  }
+}
+
+export function* submitCitizenIdFacebook(action) {
+  try {
+    const json = yield call(postJSON, `${API_SERVER}/api/Auth/${action.payload.accessToken}/setfb`, action.payload);
+    yield put({
+      type: SUBMIT_CITIZENID_FACEBOOK_SUCCESS,
+      payload: json,
+    });
+  } catch (error) {
+    const result = {
+      accessToken: action.payload.accessToken,
+      error: 'ไม่พบเลขบัตรประชาชนในระบบ'
+    };
+    yield put({
+      type: SUBMIT_CITIZENID_FACEBOOK_FAILED,
+      payload: result,
+    });
+  }
+}
+
 export function* hasAccessToken(action) {
-  try {    
+  try {
     const json = yield call(getJSON, `${API_SERVER}/api/Auth/${action.payload}/citizenId`);
     yield put({
       type: HAS_ACCESS_TOKEN_SUCCESS,
@@ -56,6 +96,8 @@ export function* submitLogout() {
 
 function* watchAuthSagas() {
   yield takeLatest(SUBMIT_LOGIN, submitLogin);
+  yield takeLatest(SUBMIT_LOGIN_FACEBOOK, submitLoginFacebook);
+  yield takeLatest(SUBMIT_CITIZENID_FACEBOOK, submitCitizenIdFacebook);
   yield takeLatest(HAS_ACCESS_TOKEN, hasAccessToken);
   yield takeLatest(SUBMIT_LOGOUT, submitLogout);
 }

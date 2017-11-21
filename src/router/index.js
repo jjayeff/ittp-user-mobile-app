@@ -14,6 +14,7 @@ import Question from './question';
 import Channel from './channel';
 import Address from './address';
 import LoanPDF from './loan/components/LoanPDF';
+import CitizenIdForm from './login/containers/CitizenIdForm';
 
 class RouterComponent extends Component {
   render() {
@@ -34,6 +35,7 @@ class RouterComponent extends Component {
           <Scene key="channel" component={Channel} title="Channel" hideNavBar />
           <Scene key="address" component={Address} title="Address" hideNavBar />
           <Scene key="loanPDF" component={LoanPDF} title="LoanPDF" hideNavBar />
+          <Scene key="citizenIdForm" component={CitizenIdForm} title="CitizenIdForm" hideNavBar />          
         </Scene>
       </Router>
     );

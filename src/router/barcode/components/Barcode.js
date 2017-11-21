@@ -14,7 +14,7 @@ class Barcode extends Component {
       <View style={containerStyle} key={loan.loan_id}>
         <ScrollView>
           <View style={{ paddingBottom: 40 }}>
-            <BarcodeSummary loan={loan} />
+            <BarcodeSummary loan={loan} num={this.props.loans.loanDb.length} index={index} />
             <BarcodeImage loanId={loan.loan_id} />
             <BarcodeList transactions={transactions.transaction90Db[index]} loan={loan} />
           </View>
