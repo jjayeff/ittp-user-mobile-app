@@ -8,12 +8,14 @@ import {
   BCBBL,
   BCGSB,
   CD,
-  FIRST_TRANSACTION,
   LOAN_OPENED,
+  LOAN_CLOSED,
   BBL_NAME,
   GSB_NAME,
   ITTP_NAME,
   BATH,
+  CLOSED_LOAN,
+  OPENED_LOAN
 } from '../../../texts';
 import TransactionListSaction from './TransactionListSaction';
 
@@ -40,14 +42,6 @@ class TransactionList extends Component {
         const transactionDetail = { name: ITTP_NAME, icon: 'ITTP' };
         return transactionDetail;
       }
-      case FIRST_TRANSACTION: {
-        const transactionDetail = { name: ITTP_NAME, icon: 'ITTP' };
-        return transactionDetail;
-      }
-      case LOAN_OPENED: {
-        const transactionDetail = { name: ITTP_NAME, icon: 'ITTP' };
-        return transactionDetail;
-      }
       default: {
         const transactionDetail = { name: ITTP_NAME, icon: 'ITTP' };
         return transactionDetail;
@@ -59,7 +53,15 @@ class TransactionList extends Component {
       <List>
         {
           this.props.transactions.map((item, i) => {
-            const cash = item.cash_in ? `-${Money(item.cash_in)} ${BATH}` : `+${Money(item.cash_out)} ${BATH}`;
+            let cash = '';
+            switch (item.trc) {
+              case
+                LOAN_CLOSED: cash = CLOSED_LOAN; break;
+              case
+                LOAN_OPENED: cash = OPENED_LOAN; break;
+              default:
+                cash = item.cash_in ? `-${Money(item.cash_in)} ${BATH}` : `+${Money(item.cash_out)} ${BATH}`;
+            }
             const trc = this.trcBank(item.trc);
             const transaction = {
               cash,

@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Cloud-Light',
     backgroundColor: 'rgba(0,0,0,0)',
     color: '#000',
-    paddingLeft: 5,
+    paddingLeft: 9,
   },
 });
 

@@ -43,6 +43,7 @@ const initialState = {
   accessToken: undefined,
   isLoggedIn: false,
   citizenId: undefined,
+  fbAccessToken: undefined,
   errorMessage: undefined
 };
 
@@ -126,6 +127,7 @@ const reducer = (state = initialState, action) => {
         accessToken: undefined,
         isLoggedIn: false,
         citizenId: undefined,
+        fbAccessToken: undefined,                
         errorMessage: undefined
       };
     case HAS_ACCESS_TOKEN:
@@ -134,6 +136,7 @@ const reducer = (state = initialState, action) => {
         accessToken: undefined,
         isLoggedIn: false,
         citizenId: undefined,
+        fbAccessToken: undefined,        
         errorMessage: undefined
       };
     case HAS_ACCESS_TOKEN_SUCCESS:
@@ -142,6 +145,7 @@ const reducer = (state = initialState, action) => {
         accessToken: action.payload.accessToken,
         isLoggedIn: true,
         citizenId: action.payload.username,
+        fbAccessToken: undefined,        
         errorMessage: undefined
       };
     case HAS_ACCESS_TOKEN_FAILED:
@@ -150,6 +154,7 @@ const reducer = (state = initialState, action) => {
         accessToken: undefined,
         isLoggedIn: false,
         citizenId: undefined,
+        fbAccessToken: true,
         errorMessage: action.payload
       };
     default:

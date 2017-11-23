@@ -40,6 +40,8 @@ export const ALL_TOTAL = 'ยอดค้างคงเหลือ';
 export const CLICK_DETAIL = 'ดูรายละเอียด';
 export const LAST_DATE = 'อัพเดทล่าสุด';
 export const TEL = 'โทร.';
+export const CLOSED_LOAN = 'ปิดสัญญาเรียบร้อย';
+export const OPENED_LOAN = 'เปิดสัญญาเรียบร้อย';
 
 //Icon
 export const HOME = 'หน้าแรก';
@@ -73,6 +75,7 @@ export const BCGSB = 'BCGSB';
 export const CD = 'CD';
 export const FIRST_TRANSACTION = 'FD';
 export const LOAN_OPENED = 'LO';
+export const LOAN_CLOSED = 'PO';
 
 //bank
 export const BBL_NAME = 'บัญชีธนาคารกรุงเทพ';

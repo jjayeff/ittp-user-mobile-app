@@ -17,7 +17,7 @@ class LoginForm extends Component {
     this.onChangeCitizenId = this.onChangeCitizenId.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
     this.onPressLogin = this.onPressLogin.bind(this);
-    this.fbAuth = this.fbAuth.bind(this);    
+    this.fbAuth = this.fbAuth.bind(this);
   }
   async saveItem(item, selectedValue) {
     try {
@@ -38,6 +38,20 @@ class LoginForm extends Component {
   }
   fbNew(accessToken) {
     Actions.citizenIdForm(accessToken);
+  }
+  async resetAccessToken() {
+    try {
+      Promise.all(
+        AsyncStorage.getAllKeys()
+          .then(ks => ks.map(
+            async k => await AsyncStorage.removeItem(k).then(() => {
+              Actions.login();
+            }))
+          )
+      );
+    } catch (error) {
+      console.log(`AsyncStorage error: ${error.message}`);
+    }
   }
   fbAuth() {
     LoginManager.logInWithReadPermissions(['public_profile']).then((result) => {
@@ -83,7 +97,7 @@ class LoginForm extends Component {
     });
   }
   render() {
-    const { accessToken, isLoggedIn, errorMessage } = this.props.auth;
+    const { accessToken, isLoggedIn, errorMessage, fbAccessToken } = this.props.auth;
     if (errorMessage) {
       Alert.alert(errorMessage);
       this.props.submitLogout();
@@ -93,6 +107,9 @@ class LoginForm extends Component {
     }
     if (accessToken && !isLoggedIn) {
       this.fbNew(accessToken);
+    }
+    if (fbAccessToken) {
+      this.resetAccessToken();
     }
     return (
       <View style={{ height: '100%', width: '100%' }}>

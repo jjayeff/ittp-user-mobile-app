@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Image, TouchableWithoutFeedback } from 'react-native';
 import Modal from 'react-native-modal';
 import { ModalComponent } from '../../../components/common';
-import { MIN_DUE, DUE_DATE, BATH, CLICK_DETAIL } from '../../../texts';
+import { MIN_DUE, DUE_DATE, BATH, CLICK_DETAIL, LOAN_CLOSED, CLOSED_LOAN } from '../../../texts';
 import { DateFormat, Money } from '../../../utils/base';
 import ModalLoanDetail from './ModalLoanDetail';
 import { normalize } from '../../../utils/fontResponsive';
@@ -13,6 +13,34 @@ class LoanDetail extends Component {
   }
   showModal = () => this.setState({ isModalVisible: true });
   hideModal = () => this.setState({ isModalVisible: false });
+  renderAmount(minDue, trc) {
+    if (trc !== LOAN_CLOSED) {
+      return (
+        <Text style={styles.textHeadStyle}>
+          {Money(minDue)} {BATH}
+        </Text>
+      );
+    }
+    return (
+      <Text style={styles.textHeadStyle}>
+        {CLOSED_LOAN}
+      </Text>
+    );
+  }
+  renderDate(dueDate, trc) {
+    if (trc !== 'PO') {
+      return (
+        <Text style={styles.textHeadStyle}>
+          {DateFormat(dueDate)}
+        </Text>
+      );
+    }
+    return (
+      <Text style={styles.textHeadStyle}>
+        -
+      </Text>
+    );
+  }
   render() {
     const {
       loanDetailContainerStyle,
@@ -25,7 +53,7 @@ class LoanDetail extends Component {
       textDetail,
       pageStyle
     } = styles;
-    const { due_date, min_due } = this.props.loan;
+    const { due_date, min_due, trc } = this.props.loan;
     const { index, num } = this.props;
     return (
       <View style={loanDetailContainerStyle}>
@@ -42,15 +70,11 @@ class LoanDetail extends Component {
                   <Text style={textStyle}>
                     {(MIN_DUE)}
                   </Text>
-                  <Text style={textHeadStyle}>
-                    {Money(min_due)} {BATH}
-                  </Text>
+                  {this.renderAmount(min_due, trc)}
                   <Text style={textStyle}>
                     {DUE_DATE}
                   </Text>
-                  <Text style={textHeadStyle}>
-                    {DateFormat(due_date)}
-                  </Text>
+                  {this.renderDate(due_date, trc)}
                   <Text style={textDetail}>
                     {CLICK_DETAIL}
                   </Text>
