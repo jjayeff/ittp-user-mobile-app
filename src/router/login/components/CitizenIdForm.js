@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { View, Image } from 'react-native';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Fumi } from 'react-native-textinput-effects';
-import { Button } from 'react-native-elements';
-import { ID } from '../../../texts';
 import { GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
+import { ID } from '../../../texts';
+import { Button } from '../../../components/common';
+
 
 class CitizenIdForm extends Component {
   constructor(props) {
@@ -47,7 +48,21 @@ class CitizenIdForm extends Component {
     // Start the graph request.
     new GraphRequestManager().addRequest(infoRequest).start();
   }
+  renderLoading(loading) {
+    return (
+      <View style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 20, paddingBottom: 5 }} >
+        <Button
+          title='Login'
+          onPress={this.onPressLogin}
+          icon='envira'
+          type='font-awesome'
+          spinner={loading}
+        />
+      </View>
+    );
+  }
   render() {
+    const { loading } = this.props;
     return (
       <View style={{ height: '100%', width: '100%' }}>
         <Image
@@ -72,16 +87,7 @@ class CitizenIdForm extends Component {
               onChangeText={(text) => { this.onChangeCitizenId(text); }}
             />
           </View>
-          <View style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 20, paddingBottom: 5 }} >
-            <Button
-              raised
-              onPress={this.onPressLogin}
-              icon={{ name: 'envira', type: 'font-awesome' }}
-              buttonStyle={{ backgroundColor: '#4d9edd', borderRadius: 30 }}
-              title='Login'
-              value={this.state.citizenId}
-            />
-          </View>
+          {this.renderLoading(loading)}
         </Image>
       </View>
     );

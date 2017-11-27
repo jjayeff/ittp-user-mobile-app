@@ -44,7 +44,8 @@ const initialState = {
   isLoggedIn: false,
   citizenId: undefined,
   fbAccessToken: undefined,
-  errorMessage: undefined
+  errorMessage: undefined,
+  loading: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -55,7 +56,8 @@ const reducer = (state = initialState, action) => {
         accessToken: undefined,
         isLoggedIn: false,
         citizenId: undefined,
-        errorMessage: undefined
+        errorMessage: undefined,
+        loading: true
       };
     case SUBMIT_LOGIN_SUCCESS:
       return {
@@ -63,7 +65,8 @@ const reducer = (state = initialState, action) => {
         accessToken: action.payload.accessToken,
         isLoggedIn: true,
         citizenId: action.payload.username,
-        errorMessage: undefined
+        errorMessage: undefined,
+        loading: false
       };
     case SUBMIT_LOGIN_FAILED:
       return {
@@ -71,15 +74,17 @@ const reducer = (state = initialState, action) => {
         accessToken: undefined,
         isLoggedIn: false,
         citizenId: undefined,
-        errorMessage: action.payload
+        errorMessage: action.payload,
+        loading: false
       };
-      case SUBMIT_CITIZENID_FACEBOOK:
+    case SUBMIT_CITIZENID_FACEBOOK:
       return {
         ...state,
         accessToken: undefined,
         isLoggedIn: false,
         citizenId: undefined,
-        errorMessage: undefined
+        errorMessage: undefined,
+        loading: true
       };
     case SUBMIT_CITIZENID_FACEBOOK_SUCCESS:
       return {
@@ -87,7 +92,8 @@ const reducer = (state = initialState, action) => {
         accessToken: action.payload.accessToken,
         isLoggedIn: true,
         citizenId: action.payload.username,
-        errorMessage: undefined
+        errorMessage: undefined,
+        loading: false
       };
     case SUBMIT_CITIZENID_FACEBOOK_FAILED:
       return {
@@ -95,7 +101,8 @@ const reducer = (state = initialState, action) => {
         accessToken: action.payload.accessToken,
         isLoggedIn: false,
         citizenId: undefined,
-        errorMessage: action.payload.error
+        errorMessage: action.payload.error,
+        loading: false
       };
     case SUBMIT_LOGIN_FACEBOOK:
       return {
@@ -103,7 +110,8 @@ const reducer = (state = initialState, action) => {
         accessToken: undefined,
         isLoggedIn: false,
         citizenId: undefined,
-        errorMessage: undefined
+        errorMessage: undefined,
+        loading: true
       };
     case SUBMIT_LOGIN_FACEBOOK_SUCCESS:
       return {
@@ -111,7 +119,8 @@ const reducer = (state = initialState, action) => {
         accessToken: action.payload.accessToken,
         isLoggedIn: true,
         citizenId: action.payload.username,
-        errorMessage: undefined
+        errorMessage: undefined,
+        loading: false
       };
     case SUBMIT_LOGIN_FACEBOOK_FAILED:
       return {
@@ -119,7 +128,8 @@ const reducer = (state = initialState, action) => {
         accessToken: action.payload.accessToken,
         isLoggedIn: false,
         citizenId: undefined,
-        errorMessage: undefined
+        errorMessage: undefined,
+        loading: false
       };
     case SUBMIT_LOGOUT:
       return {
@@ -127,8 +137,9 @@ const reducer = (state = initialState, action) => {
         accessToken: undefined,
         isLoggedIn: false,
         citizenId: undefined,
-        fbAccessToken: undefined,                
-        errorMessage: undefined
+        fbAccessToken: undefined,
+        errorMessage: undefined,
+        loading: false
       };
     case HAS_ACCESS_TOKEN:
       return {
@@ -136,8 +147,9 @@ const reducer = (state = initialState, action) => {
         accessToken: undefined,
         isLoggedIn: false,
         citizenId: undefined,
-        fbAccessToken: undefined,        
-        errorMessage: undefined
+        fbAccessToken: undefined,
+        errorMessage: undefined,
+        loading: true
       };
     case HAS_ACCESS_TOKEN_SUCCESS:
       return {
@@ -145,8 +157,9 @@ const reducer = (state = initialState, action) => {
         accessToken: action.payload.accessToken,
         isLoggedIn: true,
         citizenId: action.payload.username,
-        fbAccessToken: undefined,        
-        errorMessage: undefined
+        fbAccessToken: undefined,
+        errorMessage: undefined,
+        loading: false
       };
     case HAS_ACCESS_TOKEN_FAILED:
       return {
@@ -155,7 +168,8 @@ const reducer = (state = initialState, action) => {
         isLoggedIn: false,
         citizenId: undefined,
         fbAccessToken: true,
-        errorMessage: action.payload
+        errorMessage: action.payload,
+        loading: false
       };
     default:
       return state;

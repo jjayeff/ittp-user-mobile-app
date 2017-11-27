@@ -3,9 +3,10 @@ import { View, Image, AsyncStorage, Alert } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Fumi } from 'react-native-textinput-effects';
-import { Button, SocialIcon } from 'react-native-elements';
-import { PHONE, ID } from '../../../texts';
+import { SocialIcon } from 'react-native-elements';
 import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
+import { PHONE, ID } from '../../../texts';
+import { Button } from '../../../components/common';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -96,8 +97,21 @@ class LoginForm extends Component {
       console.log('some error occurred!!');
     });
   }
+  renderLoading(loading) {
+    return (
+      <View style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 20, paddingBottom: 5 }} >
+        <Button
+          title='Login'
+          onPress={this.onPressLogin}
+          icon='envira'
+          type='font-awesome'
+          spinner={loading}
+        />
+      </View>
+    );
+  }
   render() {
-    const { accessToken, isLoggedIn, errorMessage, fbAccessToken } = this.props.auth;
+    const { accessToken, isLoggedIn, errorMessage, fbAccessToken, loading } = this.props.auth;
     if (errorMessage) {
       Alert.alert(errorMessage);
       this.props.submitLogout();
@@ -148,16 +162,7 @@ class LoginForm extends Component {
               secureTextEntry
             />
           </View>
-          <View style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 20, paddingBottom: 5 }} >
-            <Button
-              raised
-              onPress={this.onPressLogin}
-              icon={{ name: 'envira', type: 'font-awesome' }}
-              buttonStyle={{ backgroundColor: '#4d9edd', borderRadius: 30 }}
-              title='Login'
-              value={this.state.citizenId}
-            />
-          </View>
+          {this.renderLoading(loading)}
           <View style={{ paddingLeft: 30, paddingRight: 30 }}>
             <SocialIcon
               title='Sign In With Facebook'
