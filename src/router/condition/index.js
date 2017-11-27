@@ -7,7 +7,7 @@ import ConditionComponent from './components/Condition';
 
 class Condition extends Component {
   onPressBack() {
-    Actions.me();
+    Actions.contact();
   }
   render() {
     const { containerStyle } = styles;

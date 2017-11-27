@@ -64,7 +64,7 @@ class Privacy extends Component {
 
 const styles = StyleSheet.create({
   containerStyle: {
-    backgroundColor: '#e6eaed',
+    backgroundColor: '#fff',
     flex: 1,
     flexDirection: 'column',
   },

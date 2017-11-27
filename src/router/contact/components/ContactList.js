@@ -28,6 +28,9 @@ class ContactList extends Component {
   onPressPrivacy() {
     Actions.privacy();
   }
+  onPressCondition() {
+    Actions.condition();
+  }
   render() {
     const list1 = [
       {
@@ -57,7 +60,7 @@ class ContactList extends Component {
       {
         title: CONDITION_SERVICE,
         icon: 'error-outline',
-        onPress: this.onPressInfo
+        onPress: this.onPressCondition
       },
       {
         title: PRIVACY,

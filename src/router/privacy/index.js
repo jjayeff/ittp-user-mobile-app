@@ -7,7 +7,7 @@ import PrivacyComponent from './components/Privacy';
 
 class Privacy extends Component {
   onPressBack() {
-    Actions.me();
+    Actions.contact();
   }
   render() {
     const { containerStyle } = styles;
