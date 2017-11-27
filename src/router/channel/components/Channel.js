@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, TouchableHighlight } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import { normalize } from '../../../utils/fontResponsive';
 
 const channel = [

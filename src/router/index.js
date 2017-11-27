@@ -12,6 +12,8 @@ import Place from './place';
 import SubPlace from './place/subIndex.js';
 import Question from './question';
 import Channel from './channel';
+import Privacy from './privacy';
+import Condition from './condition';
 import Address from './address';
 import LoanPDF from './loan/components/LoanPDF';
 import CitizenIdForm from './login/containers/CitizenIdForm';
@@ -21,7 +23,7 @@ class RouterComponent extends Component {
     return (
       <Router>
         <Scene key="root">
-          <Scene key="login" component={Login} title="Login" hideNavBar initial />
+          <Scene key="login" component={Login} title="Login" hideNavBar />
           <Scene key="home" component={Home} title="Home" hideNavBar />
           <Scene key="loans" component={Loans} title="Loans" hideNavBar />
           <Scene key="history" component={History} title="History" hideNavBar />
@@ -33,9 +35,11 @@ class RouterComponent extends Component {
           <Scene key="subplace" component={SubPlace} title="SubPlace" hideNavBar />
           <Scene key="question" component={Question} title="Question" hideNavBar />
           <Scene key="channel" component={Channel} title="Channel" hideNavBar />
+          <Scene key="privacy" component={Privacy} title="Privacy" hideNavBar />
+          <Scene key="condition" component={Condition} title="Condition" hideNavBar initial />
           <Scene key="address" component={Address} title="Address" hideNavBar />
           <Scene key="loanPDF" component={LoanPDF} title="LoanPDF" hideNavBar />
-          <Scene key="citizenIdForm" component={CitizenIdForm} title="CitizenIdForm" hideNavBar />          
+          <Scene key="citizenIdForm" component={CitizenIdForm} title="CitizenIdForm" hideNavBar />
         </Scene>
       </Router>
     );

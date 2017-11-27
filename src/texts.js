@@ -61,6 +61,8 @@ export const HISTORY_NAME = 'ประวัติการชำระเงิ
 export const PAYMENT = 'จ่ายเงิน';
 export const CHANNEL_PAYMENT = 'ช่องทางจ่ายเงิน';
 export const ABOUT_ITTP = 'เกี่ยวกับบริษัทไอทีทีพี';
+export const PRIVACY = 'นโยบายความเป็นส่วนตัว';
+export const CONDITION_SERVICE = 'เงื่อนไขการให้บริการ';
 export const LOGOUT = 'ออกจากระบบ';
 
 //etc
@@ -76,6 +78,12 @@ export const CD = 'CD';
 export const FIRST_TRANSACTION = 'FD';
 export const LOAN_OPENED = 'LO';
 export const LOAN_CLOSED = 'PO';
+
+//contact
+export const LINE = 'ไลน์';
+export const PHONE_CONTACT = 'ศูนย์บริการลูกค้า';
+export const FACEBOOK = 'Facebook Fanpage';
+export const WEBSITE = 'เว็บไซต์';
 
 //bank
 export const BBL_NAME = 'บัญชีธนาคารกรุงเทพ';

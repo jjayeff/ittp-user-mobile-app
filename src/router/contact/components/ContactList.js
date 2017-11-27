@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import Communications from 'react-native-communications';
+import { Actions } from 'react-native-router-flux';
 import { CardLinkIcon } from '../../../components/common';
+import {
+  LINE,
+  PHONE_CONTACT,
+  FACEBOOK,
+  WEBSITE,
+  PRIVACY,
+  CONDITION_SERVICE,
+} from '../../../texts';
 
 class ContactList extends Component {
   onPressPhone() {
@@ -13,44 +22,47 @@ class ContactList extends Component {
   onPressLine() {
     Communications.web('https://line.me/R/ti/p/%40ittp');
   }
-  onPressWedpage() {
+  onPressWebpage() {
     Communications.web('http://www.ittp.co.th/');
+  }
+  onPressPrivacy() {
+    Actions.privacy();
   }
   render() {
     const list1 = [
       {
-        title: 'ศูนย์บริการลูกค้า',
+        title: PHONE_CONTACT,
         icon: 'phone',
         onPress: this.onPressPhone,
         rightTitle: '02-153-9580',
       },
       {
-        title: 'ไลน์',
+        title: LINE,
         icon: 'line',
         onPress: this.onPressLine,
         rightTitle: '@ittp',
       },
       {
-        title: 'Facebook Fanpage',
+        title: FACEBOOK,
         icon: 'facebook',
         onPress: this.onPressFacebook
       },
       {
-        title: 'เว็บไซต์',
+        title: WEBSITE,
         icon: 'web',
-        onPress: this.onPressWedpage
+        onPress: this.onPressWebpage
       },
     ];
     const list2 = [
       {
-        title: 'เงื่อนไขการให้บริการ',
+        title: CONDITION_SERVICE,
         icon: 'error-outline',
         onPress: this.onPressInfo
       },
       {
-        title: 'นโยบายความเป็นส่วนตัว',
+        title: PRIVACY,
         icon: 'lock-outline',
-        onPress: this.onPressInfo
+        onPress: this.onPressPrivacy
       },
     ];
     return (
