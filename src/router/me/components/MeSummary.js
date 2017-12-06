@@ -27,8 +27,8 @@ class MeSummary extends Component {
     return (
       <TouchableWithoutFeedback onPress={this.onPressImage}>
         <Image
-          style={{ width: 80, height: 80, borderRadius: 40, borderColor: 'black' }}
-          source={require('../../../../store/image/test.jpeg')}
+          style={{ width: 180, height: 60 }}
+          source={require('../../../../store/image/ITTP.jpg')}
         />
       </TouchableWithoutFeedback>
     );
@@ -39,7 +39,7 @@ class MeSummary extends Component {
     return (
       <View style={containerStyle}>
         {this.renderImage()}
-        <View style={{ flexDirection: 'row' }}>
+        <View style={{ flexDirection: 'row', paddingTop: 20 }}>
           <Icon name='person' color='#366dc0' />
           <Text style={textStyle}> {YOU} {firstname} {lastname}</Text>
         </View>

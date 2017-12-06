@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">mobileApp</string>
+    <string name="app_name">ITTP</string>
     <string name="facebook_app_id">237458890122613</string>
     <string name="fb_login_protocol_scheme">fb237458890122613</string>
 </resources>
