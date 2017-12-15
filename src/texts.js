@@ -91,7 +91,7 @@ export const GSB_NAME = 'บัญชีธนาคารออมสิน';
 export const ITTP_NAME = 'บริษัท ไอทีทีพี สาขาใหญ่';
 
 //login
-export const PHONE = 'เบอร์โทรศัพท์มือถือ';
+export const PASSWORD = 'รหัสผ่าน';
 export const ID = 'หมายเลขบัตรประชาชน';
 
 //product 

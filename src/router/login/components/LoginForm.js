@@ -5,7 +5,7 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Fumi } from 'react-native-textinput-effects';
 import { SocialIcon } from 'react-native-elements';
 import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
-import { PHONE, ID } from '../../../texts';
+import { PASSWORD, ID } from '../../../texts';
 import { Button } from '../../../components/common';
 
 class LoginForm extends Component {
@@ -151,9 +151,9 @@ class LoginForm extends Component {
           </View>
           <View style={{ paddingBottom: 10 }}>
             <Fumi
-              label={PHONE}
+              label={PASSWORD}
               iconClass={FontAwesomeIcon}
-              iconName={'phone'}
+              iconName={'key'}
               iconColor={'#03A9F4'}
               iconSize={20}
               style={{ height: 60, width: '80%', alignSelf: 'center' }}
